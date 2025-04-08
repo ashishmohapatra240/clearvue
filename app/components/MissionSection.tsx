@@ -2,7 +2,7 @@ export function MissionSection() {
   return (
     <section className="relative py-24 bg-white dark:bg-neutral-950">
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-      
+
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Left Content */}
@@ -11,12 +11,14 @@ export function MissionSection() {
               Our Mission
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-6">
-              Transforming vision care through innovation and personalized service.
+              Transforming vision care through innovation and personalized
+              service.
             </p>
             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              At ClearVue, we're committed to providing exceptional eyewear solutions that 
-              enhance both vision and style. We believe everyone deserves access to 
-              premium eye care and fashionable frames that reflect their unique personality.
+              At ClearVue, we&apos;re committed to providing exceptional eyewear
+              solutions that enhance both vision and style. We believe everyone
+              deserves access to premium eye care and fashionable frames that
+              reflect their unique personality.
             </p>
           </div>
 
@@ -45,4 +47,4 @@ export function MissionSection() {
       </div>
     </section>
   );
-} 
+}
