@@ -6,12 +6,14 @@ import { StoreLocator } from "./components/StoreLocator";
 import { VisionSection } from "./components/VisionSection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
+import { TestimonialsSection } from "./components/TestimonialsSection";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
+      <TestimonialsSection />
       <AboutSection />
       <VisionSection />
       <MissionSection />
