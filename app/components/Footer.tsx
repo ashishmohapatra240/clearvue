@@ -1,12 +1,12 @@
 export function Footer() {
   return (
-    <footer className="bg-neutral-950 text-white">
+    <footer className="bg-emerald-700 text-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-4">
-            <h3 className="font-[--font-dm-serif] text-xl">ClearVue</h3>
-            <p className="text-neutral-400 text-sm max-w-xs">
+            <h3 className="text-xl font-semibold">ClearVue</h3>
+            <p className="text-white text-sm max-w-xs">
               Premium eyewear for those who appreciate quality, style, and
               exceptional vision care.
             </p>
@@ -15,24 +15,33 @@ export function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-medium mb-4">Quick Links</h4>
-            <ul className="space-y-3 text-neutral-400">
+            <ul className="space-y-3 text-white">
               <li>
                 <a href="/about" className="hover:text-white transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="/collection" className="hover:text-white transition-colors">
+                <a
+                  href="/collection"
+                  className="hover:text-white transition-colors"
+                >
                   Collection
                 </a>
               </li>
               <li>
-                <a href="/book-appointment" className="hover:text-white transition-colors">
+                <a
+                  href="/book-appointment"
+                  className="hover:text-white transition-colors"
+                >
                   Book Appointment
                 </a>
               </li>
               <li>
-                <a href="/careers" className="hover:text-white transition-colors">
+                <a
+                  href="/careers"
+                  className="hover:text-white transition-colors"
+                >
                   Careers
                 </a>
               </li>
@@ -42,14 +51,20 @@ export function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="font-medium mb-4">Contact</h4>
-            <ul className="space-y-3 text-neutral-400">
+            <ul className="space-y-3 text-white">
               <li>
-                <a href="tel:+919876543210" className="hover:text-white transition-colors">
+                <a
+                  href="tel:+919876543210"
+                  className="hover:text-white transition-colors"
+                >
                   +91 98765 43210
                 </a>
               </li>
               <li>
-                <a href="mailto:contact@clearvue.com" className="hover:text-white transition-colors">
+                <a
+                  href="mailto:contact@clearvue.com"
+                  className="hover:text-white transition-colors"
+                >
                   contact@clearvue.com
                 </a>
               </li>
@@ -62,7 +77,7 @@ export function Footer() {
           {/* Business Hours */}
           <div>
             <h4 className="font-medium mb-4">Business Hours</h4>
-            <ul className="space-y-3 text-neutral-400">
+            <ul className="space-y-3 text-white">
               <li>Monday - Saturday</li>
               <li>10:00 AM - 8:00 PM</li>
               <li>Sunday</li>
@@ -72,16 +87,22 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-neutral-800 mt-12 pt-8">
+        <div className="border-t border-white/40 mt-12 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-neutral-400 text-sm">
+            <p className="text-white text-sm">
               © {new Date().getFullYear()} ClearVue. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="/privacy" className="text-neutral-400 hover:text-white transition-colors">
+              <a
+                href="/privacy"
+                className="text-white hover:text-white transition-colors"
+              >
                 Privacy Policy
               </a>
-              <a href="/terms" className="text-neutral-400 hover:text-white transition-colors">
+              <a
+                href="/terms"
+                className="text-white hover:text-white transition-colors"
+              >
                 Terms of Service
               </a>
             </div>
@@ -90,4 +111,4 @@ export function Footer() {
       </div>
     </footer>
   );
-} 
+}
