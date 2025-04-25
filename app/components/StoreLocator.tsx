@@ -46,7 +46,7 @@ const STORES = [
 
 export function StoreLocator() {
   return (
-    <section className="py-24">
+    <section className="py-24 bg-neutral-50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-4xl font-semibold mb-6 text-neutral-900">

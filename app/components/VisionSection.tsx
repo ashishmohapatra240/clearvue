@@ -1,9 +1,9 @@
 export function VisionSection() {
   return (
-    <section className="py-24">
+    <section className="py-24 bg-neutral-50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-4xl font-semibold mb-4">
+          <h2 className="text-4xl font-semibold mb-4 text-neutral-900">
             We offer wide range of coverage
           </h2>
         </div>
@@ -51,11 +51,13 @@ export function VisionSection() {
               key={item.title}
               className={`rounded-3xl p-8 transition-all bg-white border-2 border-neutral-100 hover:shadow-lg`}
             >
-              <div className="inline-block rounded-full bg-white/10 px-3 py-1 text-sm mb-6">
+              <div className="inline-block rounded-full px-3 py-1 text-sm mb-6 text-neutral-900 bg-neutral-100">
                 {item.number}
               </div>
-              <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
-              <p className="text-neutral-600">{item.description}</p>
+              <h3 className="text-2xl font-semibold mb-4 text-neutral-900">
+                {item.title}
+              </h3>
+              <p className="text-neutral-600 text-lg">{item.description}</p>
             </div>
           ))}
         </div>

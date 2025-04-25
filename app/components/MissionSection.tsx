@@ -27,9 +27,11 @@ export function MissionSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Mission Statement */}
         <div className="mx-auto max-w-5xl text-center mb-16">
-          <h2 className="text-4xl font-semibold mb-6">Our Mission</h2>
+          <h2 className="text-4xl font-semibold mb-6 text-neutral-900">
+            Our Mission
+          </h2>
 
-          <p className="text-neutral-600 leading-relaxed">
+          <p className="text-neutral-600 leading-relaxed text-lg">
             At ClearVue, we&apos;re committed to providing exceptional eyewear
             solutions that enhance both vision and style. We believe everyone
             deserves access to premium eye care and fashionable frames that
@@ -42,13 +44,15 @@ export function MissionSection() {
           {stats.map((item) => (
             <div
               key={item.title}
-              className="flex flex-col items-start rounded-3xl bg-white p-8 shadow-sm ring-1 ring-neutral-100 transition-all hover:shadow-md"
+              className="flex flex-col items-start rounded-3xl bg-white p-8 shadow-sm ring-1 ring-neutral-100 transition-all hover:shadow-md border-2 border-neutral-100"
             >
-              <div className="inline-flex items-center justify-center rounded-full font-semibold mb-4 text-5xl">
+              <div className="inline-flex items-center justify-center rounded-full font-semibold mb-4 text-5xl text-neutral-900">
                 {item.number}
               </div>
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              <p className="text-neutral-600">{item.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-neutral-900">
+                {item.title}
+              </h3>
+              <p className="text-neutral-600 text-lg">{item.description}</p>
             </div>
           ))}
         </div>

@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 
 export function AboutSection() {
   return (
-    <section className="py-24 bg-white dark:bg-neutral-950">
+    <section className="py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Left Image */}
@@ -24,7 +24,7 @@ export function AboutSection() {
               Crafting excellence since 1998
             </h2>
 
-            <p className="text-neutral-600 dark:text-neutral-400 text-lg mb-8">
+            <p className="text-neutral-600 text-lg mb-8">
               ClearVue began with a simple yet powerful vision: to revolutionize
               the eyewear industry by combining premium quality, cutting-edge
               technology, and exceptional customer service. Today, we&apos;re

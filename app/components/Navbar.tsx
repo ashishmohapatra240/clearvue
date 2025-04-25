@@ -15,15 +15,13 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-lg border-b border-neutral-200 dark:border-neutral-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80  backdrop-blur-lg border-b border-neutral-200">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
-              <span className="font-[--font-dm-serif] text-xl text-neutral-900 dark:text-white">
-                ClearVue
-              </span>
+              <span className=" text-xl text-neutral-900">ClearVue</span>
             </Link>
           </div>
 
@@ -33,7 +31,7 @@ export function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                className="text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors"
               >
                 {item.name}
               </Link>
@@ -44,7 +42,7 @@ export function Navbar() {
           <div className="hidden lg:flex lg:items-center lg:gap-4">
             <Link
               href="/book-appointment"
-              className="inline-flex items-center justify-center bg-neutral-900 dark:bg-white px-4 py-2 text-sm font-medium text-white dark:text-neutral-900 transition-colors hover:bg-neutral-800 dark:hover:bg-neutral-100"
+              className="inline-flex items-center justify-center bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800"
             >
               Book Appointment
             </Link>
@@ -54,7 +52,7 @@ export function Navbar() {
           <div className="flex lg:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+              className="inline-flex items-center justify-center p-2 text-neutral-700 hover:bg-neutral-100 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <span className="sr-only">Open main menu</span>
@@ -99,7 +97,7 @@ export function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-base font-medium text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+                  className="block px-3 py-2 text-base font-medium text-neutral-700 hover:bg-neutral-100 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -107,7 +105,7 @@ export function Navbar() {
               ))}
               <Link
                 href="/book-appointment"
-                className="block px-3 py-2 text-base font-medium text-neutral-900 dark:text-white"
+                className="block px-3 py-2 text-base font-medium text-neutral-900"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Book Appointment

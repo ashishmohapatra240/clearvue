@@ -28,7 +28,7 @@ export function Hero() {
           </div>
 
           {/* Image on the right */}
-          <div className="lg:w-[450px] relative h-[400px] lg:h-auto lg:mr-20">
+          <div className="lg:w-[450px] relative h-[400px] lg:h-auto lg:mr-20 w-[300px]">
             <Image
               src="/images/hero.png"
               alt="Person wearing glasses"
