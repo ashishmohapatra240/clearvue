@@ -32,7 +32,7 @@ export function Hero() {
 
           <div className="relative flex-1 min-h-[300px] sm:min-h-[400px] lg:min-h-0">
             <Image
-              src="/images/Model.png"
+              src="/images/model-hero.png"
               alt="Person wearing glasses"
               width={1100}
               height={900}
