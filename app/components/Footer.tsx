@@ -90,7 +90,8 @@ export function Footer() {
         <div className="border-t border-white/40 mt-12 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-white text-sm">
-              © {new Date().getFullYear()} ClearVue. All rights reserved.
+              © {new Date().getFullYear()} ClearVue. All rights reserved by{" "}
+              <span className="font-bold">RetailWiz Pvt. Ltd.</span>
             </p>
             <div className="flex gap-6 text-sm">
               <a
