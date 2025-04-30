@@ -5,14 +5,32 @@ import Link from "next/link";
 import Image from "next/image";
 
 const NAVIGATION_ITEMS = [
-  { name: "Home", href: "/" },
-  { name: "About us", href: "/about" },
-  { name: "Contact us", href: "/contact" },
-  { name: "Store Locator", href: "/store-locator" },
+  { name: "Home", href: "#hero" },
+  { name: "About", href: "#about" },
+  { name: "Vision", href: "#vision" },
+  { name: "Mission", href: "#mission" },
+  { name: "Store Locator", href: "#store-locator" },
 ] as const;
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      const offsetTop =
+        element.getBoundingClientRect().top + window.pageYOffset - 80; // 80px offset for navbar
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+      setIsMobileMenuOpen(false);
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white  backdrop-blur-lg border-b border-neutral-200">
@@ -34,24 +52,26 @@ export function Navbar() {
           <div className="flex items-center justify-end lg:gap-12 ">
             <div className="hidden lg:flex lg:items-center lg:gap-8 ">
               {NAVIGATION_ITEMS.map((item) => (
-                <Link
+                <a
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors"
+                  onClick={(e) => handleScroll(e, item.href)}
+                  className="text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors cursor-pointer"
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
             </div>
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex lg:items-center lg:gap-4">
-              <Link
-                href="/book-appointment"
+              <a
+                href="#contact"
+                onClick={(e) => handleScroll(e, "#contact")}
                 className="inline-flex items-center justify-center bg-gradient-to-l from-pink-500 to-sky-400 px-4 py-2 text-sm font-medium text-white transition-colors"
               >
-                Store Locator
-              </Link>
+                Contact Us
+              </a>
             </div>
           </div>
 
@@ -101,22 +121,22 @@ export function Navbar() {
           <div className="lg:hidden">
             <div className="space-y-1 pb-3 pt-2">
               {NAVIGATION_ITEMS.map((item) => (
-                <Link
+                <a
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => handleScroll(e, item.href)}
                   className="block px-3 py-2 text-base font-medium text-neutral-700 hover:bg-neutral-100 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
-              <Link
-                href="/book-appointment"
+              <a
+                href="#contact"
+                onClick={(e) => handleScroll(e, "#contact")}
                 className="block px-3 py-2 text-base font-medium text-neutral-900"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
-                Book Appointment
-              </Link>
+                Contact Us
+              </a>
             </div>
           </div>
         )}
