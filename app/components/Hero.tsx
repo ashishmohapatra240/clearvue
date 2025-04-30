@@ -11,11 +11,11 @@ export function Hero() {
           {/* LEFT COPY  ─────────────────────────────── */}
           <div className="flex-1 flex items-center py-12 sm:py-16 lg:py-32 z-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl">
-              <h1 className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-4 sm:mb-6 text-white tracking-tight">
+              <h1 className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-4 sm:mb-6 text-white tracking-tight font-display">
                 Bring better future for your loved ones
               </h1>
 
-              <p className="text-sm sm:text-base md:text-lg text-emerald-50/90 mb-8 sm:mb-12 leading-relaxed max-w-lg">
+              <p className="text-sm sm:text-base md:text-lg text-emerald-50/90 mb-8 sm:mb-12 leading-relaxed max-w-lg font-sans">
                 Experience vision like never before with our curated collection
                 of premium eyewear. Where sophistication meets clarity in every
                 frame.

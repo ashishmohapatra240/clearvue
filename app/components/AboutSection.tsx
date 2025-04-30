@@ -20,11 +20,11 @@ export function AboutSection() {
 
           {/* Right Content */}
           <div className="flex flex-col">
-            <h2 className="text-[36px] font-semibold leading-[1.1] mb-6 text-neutral-900 tracking-tight">
+            <h2 className="text-[36px] font-semibold leading-[1.1] mb-6 text-neutral-900 tracking-tight font-display">
               Crafting excellence since 1998
             </h2>
 
-            <p className="text-neutral-600 text-lg mb-8">
+            <p className="text-neutral-600 text-lg mb-8 font-sans font-medium">
               ClearVue began with a simple yet powerful vision: to revolutionize
               the eyewear industry by combining premium quality, cutting-edge
               technology, and exceptional customer service. Today, we&apos;re
@@ -38,7 +38,7 @@ export function AboutSection() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Check className="h-5 w-5 text-neutral-900" />
-                <p className="text-black  font-semibold">
+                <p className="text-black font-semibold font-sans">
                   Premium quality eyewear and vision care
                 </p>
               </div>

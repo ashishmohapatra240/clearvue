@@ -81,16 +81,16 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-slate-100 py-24">
+    <section className="relative isolate overflow-hidden bg-pink-50 py-24">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/70 to-transparent"></div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white/70 to-transparent"></div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <header className="mb-16 text-center">
-          <span className="mx-auto mb-4 inline-block rounded-full bg-pink-50 px-3 py-1 text-xs font-semibold tracking-wider text-pink-600">
+          <span className="mx-auto mb-4 inline-block rounded-full bg-pink-200 px-3 py-1 text-xs font-bold tracking-wider text-pink-600 font-sans">
             TESTIMONIALS
           </span>
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-display">
             Our trusted clients
           </h2>
         </header>
@@ -108,7 +108,7 @@ export function TestimonialsSection() {
                   className="text-slate-300"
                   aria-hidden
                 />
-                <p className="mt-4 text-sm leading-relaxed text-slate-700">
+                <p className="mt-4 text-sm leading-relaxed text-slate-700 font-sans font-medium">
                   {t.text}
                 </p>
               </div>
@@ -124,8 +124,12 @@ export function TestimonialsSection() {
                   className="h-10 w-10 rounded-full object-cover"
                 />
                 <div>
-                  <p className="font-medium text-slate-900">{t.author}</p>
-                  <p className="text-xs text-slate-500">{t.handle}</p>
+                  <p className="font-medium text-slate-900 font-sans">
+                    {t.author}
+                  </p>
+                  <p className="text-xs text-slate-500 font-sans font-medium">
+                    {t.handle}
+                  </p>
                 </div>
               </footer>
             </article>

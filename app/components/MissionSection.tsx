@@ -23,15 +23,15 @@ export function MissionSection() {
   ];
 
   return (
-    <section className="bg-[#f8fbf6] py-24">
+    <section className="bg-pink-50 py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Mission Statement */}
         <div className="mx-auto max-w-5xl text-center mb-16">
-          <h2 className="text-4xl font-semibold mb-6 text-neutral-900">
+          <h2 className="text-4xl font-semibold mb-6 text-neutral-900 font-display">
             Our Mission
           </h2>
 
-          <p className="text-neutral-600 leading-relaxed text-lg">
+          <p className="text-neutral-600 leading-relaxed text-lg font-sans font-medium tracking-tight">
             At ClearVue, we&apos;re committed to providing exceptional eyewear
             solutions that enhance both vision and style. We believe everyone
             deserves access to premium eye care and fashionable frames that
@@ -49,10 +49,12 @@ export function MissionSection() {
               <div className="inline-flex items-center justify-center rounded-full font-semibold mb-4 text-5xl text-neutral-900">
                 {item.number}
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-neutral-900">
+              <h3 className="text-xl font-semibold mb-2 text-neutral-900 font-sans font-medium">
                 {item.title}
               </h3>
-              <p className="text-neutral-600 text-lg">{item.description}</p>
+              <p className="text-neutral-600 text-lg font-sans font-medium tracking-tight">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>
