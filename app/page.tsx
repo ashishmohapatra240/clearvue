@@ -1,21 +1,17 @@
 import { AboutSection } from "./components/AboutSection";
 import { Hero } from "./components/Hero";
 import { MissionSection } from "./components/MissionSection";
-import { Navbar } from "./components/Navbar";
 import { StoreLocator } from "./components/StoreLocator";
 import { VisionSection } from "./components/VisionSection";
 import { ContactSection } from "./components/ContactSection";
-import { Footer } from "./components/Footer";
 import { TestimonialsSection } from "./components/TestimonialsSection";
-
+import Vision from "./components/Vision";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <div id="hero">
         <Hero />
       </div>
-      <TestimonialsSection />
       <div id="about">
         <AboutSection />
       </div>
@@ -25,13 +21,15 @@ export default function Home() {
       <div id="mission">
         <MissionSection />
       </div>
+      <Vision />
       <div id="store-locator">
         <StoreLocator />
       </div>
+      <TestimonialsSection />
+
       <div id="contact">
         <ContactSection />
       </div>
-      <Footer />
     </>
   );
 }

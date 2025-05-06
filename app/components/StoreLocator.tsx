@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Phone, Clock, Search } from "lucide-react";
+import { MapPin, Phone, Search } from "lucide-react";
 
 // Parse the Excel data into a structured format
 const STORES = [
@@ -222,9 +222,11 @@ const STORES = [
 
 // First, let's add a helper function at the top to generate a random phone number
 const generateRandomPhone = () => {
-  const prefixes = ['98', '99', '70', '80', '89'];
+  const prefixes = ["98", "99", "70", "80", "89"];
   const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
-  const randomNumber = Math.floor(Math.random() * 100000000).toString().padStart(8, '0');
+  const randomNumber = Math.floor(Math.random() * 100000000)
+    .toString()
+    .padStart(8, "0");
   return `${randomPrefix}${randomNumber}`;
 };
 
@@ -260,28 +262,28 @@ export function StoreLocator() {
 
   return (
     <section className="py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center mb-12">
-          <h2 className="text-3xl font-semibold mb-4 text-neutral-900 font-display">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 rounded-lg">
+        <div className="mx-auto max-w-2xl text-center mb-12 rounded-lg">
+          <h2 className="text-3xl font-semibold mb-4 text-neutral-900 font-display rounded-lg">
             Find a Store Near You
           </h2>
-          <p className="text-lg text-neutral-600">
+          <p className="text-lg text-neutral-600 rounded-lg">
             Locate your nearest ClearVue store for expert eye care services
           </p>
         </div>
 
         {/* Search and Filter Section */}
-        <div className="mb-8 space-y-4">
-          <div className="flex flex-col sm:flex-row gap-4">
+        <div className="mb-8 space-y-4 rounded-lg">
+          <div className="flex flex-col sm:flex-row gap-4 rounded-lg">
             {/* Search Input */}
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400" />
+            <div className="relative flex-1 rounded-lg">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400 rounded-lg" />
               <input
                 type="text"
                 placeholder="Search by location, city, or pincode..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-pink-500"
+                className="w-full pl-10 pr-4 py-2 border border-neutral-300 rounded-lg focus:ring-1 focus:ring-neutral-100 focus:border-neutral-300"
               />
             </div>
 
@@ -291,7 +293,7 @@ export function StoreLocator() {
                 setSelectedState(e.target.value);
                 setSelectedCity("");
               }}
-              className="px-4 py-2 border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-pink-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:8px_8px] bg-no-repeat bg-[right_16px_center] pr-10 min-w-[140px]"
+              className="px-4 py-2 border border-neutral-300 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:8px_8px] bg-no-repeat bg-[right_16px_center] pr-10 min-w-[140px] rounded-lg"
             >
               <option value="">All States</option>
               {states.map((state) => (
@@ -304,7 +306,7 @@ export function StoreLocator() {
             <select
               value={selectedCity}
               onChange={(e) => setSelectedCity(e.target.value)}
-              className="px-4 py-2 border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-pink-500 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:8px_8px] bg-no-repeat bg-[right_16px_center] pr-10 min-w-[140px]"
+              className="px-4 py-2 border border-neutral-300 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:8px_8px] bg-no-repeat bg-[right_16px_center] pr-10 min-w-[140px] rounded-lg"
             >
               <option value="">All Cities</option>
               {cities.map((city) => (
@@ -316,15 +318,15 @@ export function StoreLocator() {
           </div>
         </div>
 
-        <p className="text-neutral-600 mb-6">
+        <p className="text-neutral-600 mb-6 rounded-lg">
           {filteredStores.length} stores found
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 rounded-lg">
           {filteredStores.map((store) => (
             <div
               key={store.id}
-              className="group bg-white overflow-hidden border border-neutral-200 hover:border-pink-200 hover:shadow-lg transition-all duration-300 flex flex-col h-[350px]"
+              className="group bg-white overflow-hidden border border-neutral-200 hover:shadow-lg transition-all duration-300 flex flex-col h-[350px] rounded-2xl"
             >
               {/* Header Section - Fixed Height */}
               <div className="bg-neutral-50 border-b border-neutral-200 p-4 h-[84px]">
@@ -335,29 +337,29 @@ export function StoreLocator() {
                   <span
                     className={`inline-flex items-center px-2.5 py-0.5 text-xs font-medium shrink-0 ml-2 ${
                       store.status === "Active"
-                        ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                        : "bg-amber-50 text-amber-700 border border-amber-200"
+                        ? "bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full"
+                        : "bg-amber-50 text-amber-700 border border-amber-200 rounded-full"
                     }`}
                   >
                     {store.status}
                   </span>
                 </div>
-                <p className="text-sm text-neutral-600 truncate">
+                <p className="text-sm text-neutral-600 truncate rounded-lg">
                   {store.city}, {store.state}
                 </p>
               </div>
 
               {/* Content Section - Flexible Height with Scroll if needed */}
-              <div className="p-4 space-y-4 flex-1 overflow-y-auto">
+              <div className="p-4 space-y-4 flex-1 overflow-y-auto rounded-lg">
                 {/* Address Section */}
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-pink-600" />
+                <div className="flex items-start gap-3 rounded-lg">
+                  <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-pink-600 rounded-lg" />
                   <div>
-                    <p className="text-sm leading-relaxed text-neutral-700 line-clamp-3">
+                    <p className="text-sm leading-relaxed text-neutral-700 line-clamp-3 rounded-lg">
                       {store.address}
                     </p>
                     {store.pincode && (
-                      <p className="text-sm text-neutral-500 mt-1">
+                      <p className="text-sm text-neutral-500 mt-1 rounded-lg">
                         PIN: {store.pincode}
                       </p>
                     )}
@@ -365,40 +367,33 @@ export function StoreLocator() {
                 </div>
 
                 {/* Info Grid */}
-                <div className="grid grid-cols-2 gap-3 pt-2">
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-pink-600" />
+                <div className="grid grid-cols-2 gap-3 pt-2 rounded-lg">
+                  <div className="flex items-center gap-2 rounded-lg">
+                    <Phone className="w-4 h-4 text-pink-600 rounded-lg" />
                     <div>
-                      <p className="text-xs text-neutral-500">Contact</p>
-                      <p className="text-sm font-medium text-neutral-700">
+                      <p className="text-xs text-neutral-500 rounded-lg">
+                        Contact
+                      </p>
+                      <p className="text-sm font-medium text-neutral-700 rounded-lg">
                         {store.phone || generateRandomPhone()}
                       </p>
                     </div>
                   </div>
-                  {store.openingDate && (
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-pink-600" />
-                      <div>
-                        <p className="text-xs text-neutral-500">Opening</p>
-                        <p className="text-sm font-medium text-neutral-700">
-                          {store.openingDate}
-                        </p>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
 
               {/* Actions Section - Fixed Height */}
-              <div className="border-t border-neutral-200 p-4 bg-neutral-50 mt-auto">
-                <div className="grid grid-cols-2 gap-3">
+              <div className="border-t border-neutral-200 p-4 bg-neutral-50 mt-auto rounded-lg">
+                <div className="grid grid-cols-2 gap-3 rounded-lg">
                   <button
                     onClick={() =>
-                      window.location.href = `tel:${(store.phone || generateRandomPhone()).replace(/\s+/g, "")}`
+                      (window.location.href = `tel:${(
+                        store.phone || generateRandomPhone()
+                      ).replace(/\s+/g, "")}`)
                     }
-                    className="flex items-center justify-center gap-2 px-3 py-2 bg-white border border-neutral-200 text-neutral-700 font-medium hover:bg-neutral-50 hover:border-neutral-300 transition-colors"
+                    className="flex items-center justify-center gap-2 px-3 py-2 bg-white border border-neutral-200 text-neutral-700 font-medium hover:bg-neutral-50 hover:border-neutral-300 transition-colors rounded-lg"
                   >
-                    <Phone className="w-4 h-4" />
+                    <Phone className="w-4 h-4 rounded-lg" />
                     <span>Call</span>
                   </button>
                   <a
@@ -407,9 +402,9 @@ export function StoreLocator() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-3 py-2 bg-white border border-neutral-200 text-neutral-700 font-medium hover:bg-neutral-50 hover:border-neutral-300 transition-colors"
+                    className="flex items-center justify-center gap-2 px-3 py-2 bg-white border border-neutral-200 text-neutral-700 font-medium hover:bg-neutral-50 hover:border-neutral-300 transition-colors rounded-lg"
                   >
-                    <MapPin className="w-4 h-4" />
+                    <MapPin className="w-4 h-4 rounded-lg" />
                     <span>Directions</span>
                   </a>
                 </div>
@@ -420,8 +415,8 @@ export function StoreLocator() {
 
         {/* No Results Message */}
         {filteredStores.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-neutral-600">
+          <div className="text-center py-12 rounded-lg">
+            <p className="text-neutral-600 rounded-lg">
               No stores found matching your search criteria.
             </p>
           </div>

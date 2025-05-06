@@ -12,33 +12,33 @@ export function VisionSection() {
           {[
             {
               number: "01",
-              title: "Prescription Glasses",
+              title: "Expert Eyes on You",
               description:
-                "Experience the world with clarity with our wide range of prescription glasses. From classic to trendy, we have it all.",
+                "Our trained optometrists follow an 18-step precision verification process — so your prescription is spot-on, your vision crystal clear, and your confidence sky-high.",
             },
             {
               number: "02",
-              title: "Contact Lenses",
+              title: "Eye Care, Anywhere",
               description:
-                "Discover the freedom of contact lenses. Our expert optometrists will guide you through the process.",
+                "Skip the clinic lines. Our home eye-check up service brings professional testing straight to the comfort of your home — easy, fast, and fully accurate.",
             },
             {
               number: "03",
-              title: "Sunglasses",
+              title: "Your Glasses, Ready in 4 Hours",
               description:
-                "Protect your eyes from the sun with our stylish sunglasses. From aviators to wayfarers, we have the perfect pair.",
+                "Forget the wait. Get your custom eyeglasses ready within just 4 hours — crafted & fitted, at record speed.",
             },
             {
               number: "04",
-              title: "Eye Exams",
+              title: "World-Class Lenses",
               description:
-                "Schedule an eye exam with our experienced optometrists to ensure your eyes are healthy and your vision is optimal.",
+                "We don’t do average. Expect only premium lenses from top international brands like Fuji, Hoya, and Crizal, which offer unmatched clarity, durability, and comfort.",
             },
             {
               number: "05",
-              title: "Lens Options",
+              title: "Fashion-forward frames, made for hustle ",
               description:
-                "Choose from a variety of lens options, including single vision, progressive, and polarized lenses.",
+                "ClearVue combines contemporary fashion with unmatched durability. Every pair is crafted to keep up with your lifestyle - stylish, sturdy, and smart.",
             },
             {
               number: "06",

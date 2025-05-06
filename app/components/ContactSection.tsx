@@ -2,7 +2,7 @@ import { Phone, Mail, Clock, MapPin, Send } from "lucide-react";
 
 export function ContactSection() {
   return (
-    <section className="py-24 bg-pink-50">
+    <section className="py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-4xl font-semibold mb-6 text-neutral-900 tracking-tight font-display">
@@ -16,7 +16,7 @@ export function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white p-8 shadow-sm border border-neutral-200">
+          <div className="bg-white p-8 shadow-sm border border-neutral-200 rounded-xl">
             <h3 className="text-2xl font-semibold mb-6 text-neutral-900 font-display">
               Send us a Message
             </h3>
@@ -31,7 +31,7 @@ export function ContactSection() {
                 <input
                   type="text"
                   id="name"
-                  className="w-full px-4 py-3 bg-white border border-neutral-200 focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition-shadow"
+                  className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-md"
                   placeholder="John Doe"
                 />
               </div>
@@ -45,7 +45,7 @@ export function ContactSection() {
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 bg-white border border-neutral-200 focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition-shadow"
+                  className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-md"
                   placeholder="john@example.com"
                 />
               </div>
@@ -59,13 +59,13 @@ export function ContactSection() {
                 <textarea
                   id="message"
                   rows={4}
-                  className="w-full px-4 py-3 bg-white border border-neutral-200 focus:ring-2 focus:ring-emerald-600 focus:border-transparent transition-shadow"
+                  className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-md"
                   placeholder="How can we help you?"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center bg-pink-600 text-white py-3 px-6 font-medium hover:bg-pink-700 transition-colors font-sans"
+                className="w-full inline-flex items-center justify-center bg-pink-600 text-white py-3 px-6 font-medium hover:bg-pink-700 transition-colors font-sans rounded-full"
               >
                 Send Message
                 <Send className="ml-2 h-4 w-4 font-sans font-medium" />
@@ -75,14 +75,14 @@ export function ContactSection() {
 
           {/* Contact Information */}
           <div className="flex flex-col justify-between">
-            <div className="bg-white p-8 shadow-sm border border-neutral-200 mb-8">
+            <div className="bg-white p-8 shadow-sm border border-neutral-200 mb-8 rounded-xl">
               <h3 className="text-2xl font-semibold mb-8 text-neutral-900 font-display">
                 Other Ways to Reach Us
               </h3>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-pink-50 rounded-lg">
+                  <div className="p-3 bg-pink-50 rounded-xl">
                     <Phone className="h-6 w-6 text-pink-600" />
                   </div>
                   <div>
@@ -101,7 +101,7 @@ export function ContactSection() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-pink-50 rounded-lg">
+                  <div className="p-3 bg-pink-50 rounded-xl">
                     <Mail className="h-6 w-6 text-pink-600" />
                   </div>
                   <div>
@@ -120,7 +120,7 @@ export function ContactSection() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-pink-50 rounded-lg">
+                  <div className="p-3 bg-pink-50 rounded-xl">
                     <MapPin className="h-6 w-6 text-pink-600" />
                   </div>
                   <div>
@@ -137,9 +137,9 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="bg-white p-8 shadow-sm border border-neutral-200">
+            <div className="bg-white p-8 shadow-sm border border-neutral-200 rounded-xl">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-pink-50 rounded-lg">
+                <div className="p-3 bg-pink-50 rounded-xl">
                   <Clock className="h-6 w-6 text-pink-600" />
                 </div>
                 <div>

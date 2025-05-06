@@ -5,11 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 const NAVIGATION_ITEMS = [
-  { name: "Home", href: "#hero" },
   { name: "About", href: "#about" },
   { name: "Vision", href: "#vision" },
   { name: "Mission", href: "#mission" },
   { name: "Store Locator", href: "#store-locator" },
+  { name: "Contact", href: "#contact" },
 ] as const;
 
 export function Navbar() {
@@ -56,7 +56,7 @@ export function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleScroll(e, item.href)}
-                  className="text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors cursor-pointer"
+                  className="text-sm font-medium text-neutral-700 hover:text-neutral-900 hover:underline transition-colors cursor-pointer font-sans"
                 >
                   {item.name}
                 </a>
@@ -66,11 +66,10 @@ export function Navbar() {
             {/* Desktop CTA */}
             <div className="hidden lg:flex lg:items-center lg:gap-4">
               <a
-                href="#contact"
-                onClick={(e) => handleScroll(e, "#contact")}
-                className="inline-flex items-center justify-center bg-gradient-to-l from-pink-500 to-sky-400 px-4 py-2 text-sm font-medium text-white transition-colors"
+                href="/careers"
+                className="inline-flex items-center justify-center bg-pink-600 px-4 py-2 text-sm font-medium text-white transition-colors rounded-full font-sans"
               >
-                Contact Us
+                Careers
               </a>
             </div>
           </div>

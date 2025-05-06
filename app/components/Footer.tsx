@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function Footer() {
   return (
     <footer
@@ -8,7 +10,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold">ClearVue</h3>
+            <Image
+              src="/images/logomark.png"
+              alt="ClearVue"
+              width={100}
+              height={100}
+            />
             <p className="text-white text-sm max-w-xs">
               Premium eyewear for those who appreciate quality, style, and
               exceptional vision care.

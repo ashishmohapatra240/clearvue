@@ -1,60 +1,108 @@
+"use client";
+import { useState, useEffect, useRef } from "react";
+import { useInView } from "framer-motion";
+
+function AnimatedCounter({ value }: { value: string }) {
+  const [displayValue, setDisplayValue] = useState("0");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let numericValue = 0;
+    let suffix = "";
+
+    if (value.includes("L+")) {
+      numericValue = 2;
+      suffix = "L+";
+    } else if (value.includes("+")) {
+      numericValue = parseInt(value.replace("+", ""));
+      suffix = "+";
+    } else {
+      numericValue = parseInt(value);
+    }
+
+    // const startValue = 0;
+    const duration = 2000; // 2 seconds for the animation
+    const startTime = performance.now();
+
+    const updateCounter = (currentTime: number) => {
+      const elapsedTime = currentTime - startTime;
+      const progress = Math.min(elapsedTime / duration, 1);
+
+      // Use easeOutExpo for a nice acceleration effect
+      const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+      const currentValue = Math.floor(easeOutProgress * numericValue);
+
+      setDisplayValue(`${currentValue}${suffix}`);
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      }
+    };
+
+    requestAnimationFrame(updateCounter);
+  }, [isInView, value]);
+
+  return <div ref={ref}>{displayValue}</div>;
+}
+
 export function MissionSection() {
   const stats = [
     {
-      number: "15+",
-      title: "Years Experience",
-      description: "Serving our community with dedication and expertise.",
+      number: "20+",
+      title: "Stores PAN India",
+      description: "Expanding our reach across the nation.",
     },
     {
-      number: "20k+",
+      number: "2L+",
       title: "Happy Customers",
       description: "Satisfied clients who trust our services.",
-    },
-    {
-      number: "4",
-      title: "Premium Locations",
-      description: "Conveniently located stores across the city.",
-    },
-    {
-      number: "100%",
-      title: "Quality Assurance",
-      description: "Commitment to excellence in every product.",
     },
   ];
 
   return (
-    <section className="bg-pink-50 py-24">
+    <section className="py-24 bg-gradient-to-b from-white to-neutral-50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Mission Statement */}
-        <div className="mx-auto max-w-5xl text-center mb-16">
-          <h2 className="text-4xl font-semibold mb-6 text-neutral-900 font-display">
+        <div className="mx-auto text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display">
             Our Mission
           </h2>
 
-          <p className="text-neutral-600 leading-relaxed text-lg font-sans font-medium tracking-tight">
-            At ClearVue, we&apos;re committed to providing exceptional eyewear
-            solutions that enhance both vision and style. We believe everyone
-            deserves access to premium eye care and fashionable frames that
-            reflect their unique personality.
+          <p className="text-neutral-600 leading-relaxed text-lg md:text-xl font-sans font-normal mx-auto">
+            At ClearVue, our mission is to deliver unmatched customer
+            satisfaction at every touchpoint — from in-store experiences and
+            expert eye checkups to tailored product recommendations,
+            customisation, on-time delivery, and dependable post-purchase
+            service.
+            <br />
+            <br />
+            We’re committed to building trust with every purchase by ensuring
+            world-class quality, thoughtful care, and style that lasts.
           </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2 lg:max-w-none lg:grid-cols-4">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2">
           {stats.map((item) => (
             <div
               key={item.title}
-              className="flex flex-col items-start rounded-3xl bg-white p-8 shadow-sm ring-1 ring-neutral-100 transition-all hover:shadow-md border-2 border-neutral-100"
+              className="relative overflow-hidden flex flex-col items-center text-center rounded-2xl bg-white p-10 shadow-lg transition-all duration-300 hover:shadow-xl border border-neutral-100 hover:border-neutral-200 group"
             >
-              <div className="inline-flex items-center justify-center rounded-full font-semibold mb-4 text-5xl text-neutral-900">
-                {item.number}
+              <div className="absolute w-40 h-40 bg-neutral-50 rounded-full -top-20 -right-20 opacity-70 group-hover:scale-110 transition-transform duration-500"></div>
+
+              <div className="relative">
+                <div className="font-semibold text-6xl sm:text-7xl text-neutral-800 font-display">
+                  <AnimatedCounter value={item.number} />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-neutral-800">
+                  {item.title}
+                </h3>
+                <p className="text-neutral-600 text-base font-normal max-w-xs mx-auto">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-neutral-900 font-sans font-medium">
-                {item.title}
-              </h3>
-              <p className="text-neutral-600 text-lg font-sans font-medium tracking-tight">
-                {item.description}
-              </p>
             </div>
           ))}
         </div>

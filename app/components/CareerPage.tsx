@@ -33,13 +33,13 @@ export default function CareerPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div className="relative py-24">
+      <div className="relative py-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h1 className="font-[--font-dm-serif] text-4xl sm:text-5xl mb-6 text-neutral-900 tracking-tight">
+            <h1 className="font-display text-4xl sm:text-5xl mb-6 text-neutral-900 tracking-tight">
               Join Our Vision for Excellence
             </h1>
-            <p className="text-xl text-neutral-600 mb-8">
+            <p className="text-xl text-neutral-600 mb-8 font-sans font-medium">
               Build your career with ClearVue and be part of a team that&apos;s
               revolutionizing the eyewear industry.
             </p>
@@ -51,27 +51,29 @@ export default function CareerPage() {
       <div className="py-16 bg-neutral-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 ">
-              <h3 className="font-[--font-dm-serif] text-2xl text-neutral-900 mb-4">
+            <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="font-display text-2xl text-neutral-900 mb-4">
                 Innovation
               </h3>
-              <p className="text-neutral-600">
+              <p className="text-neutral-600 font-sans">
                 We embrace new technologies and ideas to stay ahead in the
                 eyewear industry.
               </p>
             </div>
-            <div className="p-6 ">
-              <h3 className="font-[--font-dm-serif] text-2xl text-neutral-900 mb-4">
+            <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="font-display text-2xl text-neutral-900 mb-4">
                 Growth
               </h3>
-              <p className="text-neutral-600">
+              <p className="text-neutral-600 font-sans">
                 We invest in our team&apos;s development and provide
                 opportunities for advancement.
               </p>
             </div>
-            <div className="p-6 ">
-              <h3 className="text-2xl text-neutral-900 mb-4">Excellence</h3>
-              <p className="text-neutral-600">
+            <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="font-display text-2xl text-neutral-900 mb-4">
+                Excellence
+              </h3>
+              <p className="text-neutral-600 font-sans">
                 We strive for excellence in everything we do, from customer
                 service to technical expertise.
               </p>
@@ -83,16 +85,16 @@ export default function CareerPage() {
       {/* Job Listings Section */}
       <div className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="font-[--font-dm-serif] text-3xl sm:text-4xl mb-12 text-neutral-900  tracking-tight">
+          <h2 className="font-display text-3xl sm:text-4xl mb-12 text-neutral-900 tracking-tight">
             Open Positions
           </h2>
           <div className="space-y-8">
             {jobListings.map((job, index) => (
               <div
                 key={index}
-                className="border border-neutral-200  p-6 hover:border-neutral-300 transition-colors"
+                className="border border-neutral-200 rounded-xl p-6 hover:shadow-lg transition-all bg-white"
               >
-                <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2 font-sans">
                   {job.title}
                 </h3>
                 <div className="flex gap-4 text-sm text-neutral-600 mb-4">
@@ -100,8 +102,10 @@ export default function CareerPage() {
                   <span>•</span>
                   <span>{job.type}</span>
                 </div>
-                <p className="text-neutral-600 mb-6">{job.description}</p>
-                <button className="inline-flex items-center px-4 py-2 border border-neutral-900 text-neutral-900  hover:bg-neutral-900 hover:text-white transition-colors">
+                <p className="text-neutral-600 mb-6 font-sans">
+                  {job.description}
+                </p>
+                <button className="inline-flex items-center px-6 py-2 border border-pink-600 text-pink-600 rounded-full hover:bg-pink-600 hover:text-white transition-colors font-sans">
                   Apply Now
                 </button>
               </div>
@@ -113,16 +117,16 @@ export default function CareerPage() {
       {/* Contact Section */}
       <div className="py-16 bg-neutral-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h2 className="font-[--font-dm-serif] text-2xl sm:text-3xl mb-4 text-neutral-900">
+          <h2 className="font-display text-2xl sm:text-3xl mb-4 text-neutral-900">
             Don&apos;t see the right position?
           </h2>
-          <p className="text-neutral-600 mb-8">
+          <p className="text-neutral-600 mb-8 font-sans">
             Send us your resume and we&apos;ll keep you in mind for future
             opportunities.
           </p>
           <a
             href="mailto:careers@clearvue.com"
-            className="inline-flex items-center px-6 py-3 bg-neutral-900 text-white  hover:bg-neutral-800 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition-colors font-sans"
           >
             Contact Our HR Team
           </a>

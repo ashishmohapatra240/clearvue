@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Check } from "lucide-react";
+// import { Check } from "lucide-react";
 
 export function AboutSection() {
   return (
@@ -24,17 +24,22 @@ export function AboutSection() {
               Crafting excellence since 1998
             </h2>
 
-            <p className="text-neutral-600 text-lg mb-8 font-sans font-medium">
-              ClearVue began with a simple yet powerful vision: to revolutionize
-              the eyewear industry by combining premium quality, cutting-edge
-              technology, and exceptional customer service. Today, we&apos;re
-              proud to be one of India&apos;s leading eyewear retailers, serving
-              thousands of satisfied customers across our premium stores. Our
-              commitment to excellence has made us the trusted choice for all
-              your vision care needs.
+            <p className="text-neutral-900 text-lg mb-2 font-sans font-medium">
+              ClearVue was founded with one mission: to make premium-quality
+              eyewear truly accessible. Backed by decades of experience in
+              modern retail, our founders saw the gap and stepped in to bridge
+              it.
+            </p>
+            <p className="text-neutral-900 text-lg mb-2 font-sans font-bold">
+              What drives us?
+            </p>
+            <p className="text-neutral-900 text-lg mb-2 font-sans font-medium">
+              A passion for quality. A promise of affordability. And a
+              commitment to trust and transparency—with our customers, team, and
+              partners alike.
             </p>
 
-            {/* Feature List */}
+            {/* Feature List
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Check className="h-5 w-5 text-neutral-900" />
@@ -56,7 +61,7 @@ export function AboutSection() {
                   Flexible payment plans available
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
