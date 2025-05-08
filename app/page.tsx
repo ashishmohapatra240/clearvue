@@ -23,7 +23,7 @@ export default function Home() {
       </div>
       <Vision />
       <div id="store-locator">
-        <StoreLocator />
+        <StoreLocator featured={true} />
       </div>
       <TestimonialsSection />
 
