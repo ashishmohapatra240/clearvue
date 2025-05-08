@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { MapPin, Phone, Search } from "lucide-react";
 
-// Parse the Excel data into a structured format
 const STORES = [
   {
     id: 1,
@@ -17,6 +16,7 @@ const STORES = [
     openingDate: "04-06-2023",
     status: "Active",
     shortAddress: "",
+    featured: false,
   },
   {
     id: 2,
@@ -30,6 +30,7 @@ const STORES = [
     openingDate: "25-12-2023",
     status: "Active",
     shortAddress: "",
+    featured: false,
   },
   {
     id: 3,
@@ -42,6 +43,7 @@ const STORES = [
     openingDate: "06-01-2024",
     status: "Active",
     shortAddress: "",
+    featured: false,
   },
   {
     id: 4,
@@ -54,6 +56,7 @@ const STORES = [
     openingDate: "04-04-2024",
     status: "Active",
     shortAddress: "",
+    featured: false,
   },
   {
     id: 5,
@@ -66,6 +69,7 @@ const STORES = [
     openingDate: "24-08-2024",
     status: "Active",
     shortAddress: "",
+    featured: false,
   },
   {
     id: 6,
@@ -78,6 +82,7 @@ const STORES = [
     openingDate: "24-11-2024",
     status: "Active",
     shortAddress: "",
+    featured: false,
   },
   {
     id: 7,
@@ -91,6 +96,7 @@ const STORES = [
     openingDate: "11-11-2024",
     status: "Active",
     shortAddress: "",
+    featured: false,
   },
   {
     id: 8,
@@ -104,6 +110,7 @@ const STORES = [
     openingDate: "15-01-2025",
     status: "Active",
     shortAddress: "Infocity, Patia",
+    featured: true,
   },
   {
     id: 9,
@@ -116,6 +123,7 @@ const STORES = [
     openingDate: "20-02-2025",
     status: "Active",
     shortAddress: "ID Market",
+    featured: true,
   },
   {
     id: 10,
@@ -129,6 +137,7 @@ const STORES = [
     openingDate: "25-02-2025",
     status: "Active",
     shortAddress: "Civil Lines",
+    featured: false,
   },
   {
     id: 11,
@@ -142,6 +151,7 @@ const STORES = [
     openingDate: "",
     status: "Active",
     shortAddress: "Ramanand Nagar",
+    featured: true,
   },
   {
     id: 12,
@@ -154,6 +164,7 @@ const STORES = [
     openingDate: "25-02-2025",
     status: "Active",
     shortAddress: "The Mall Road",
+    featured: false,
   },
   {
     id: 13,
@@ -166,6 +177,7 @@ const STORES = [
     openingDate: "",
     status: "Opening soon",
     shortAddress: "",
+    featured: false,
   },
   {
     id: 14,
@@ -179,6 +191,7 @@ const STORES = [
     openingDate: "",
     status: "Opening soon",
     shortAddress: "",
+    featured: false,
   },
   {
     id: 15,
@@ -191,6 +204,7 @@ const STORES = [
     openingDate: "",
     status: "Active",
     shortAddress: "Sector 10",
+    featured: false,
   },
   {
     id: 16,
@@ -204,6 +218,7 @@ const STORES = [
     openingDate: "",
     status: "Active",
     shortAddress: "NIT 5",
+    featured: false,
   },
   {
     id: 17,
@@ -217,10 +232,10 @@ const STORES = [
     openingDate: "",
     status: "Active",
     shortAddress: "NIT 1",
+    featured: false,
   },
 ] as const;
 
-// First, let's add a helper function at the top to generate a random phone number
 const generateRandomPhone = () => {
   const prefixes = ["98", "99", "70", "80", "89"];
   const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
@@ -230,7 +245,11 @@ const generateRandomPhone = () => {
   return `${randomPrefix}${randomNumber}`;
 };
 
-export function StoreLocator() {
+interface StoreLocatorProps {
+  featured?: boolean;
+}
+
+export function StoreLocator({ featured = false }: StoreLocatorProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedState, setSelectedState] = useState<string>("");
   const [selectedCity, setSelectedCity] = useState<string>("");
@@ -260,70 +279,77 @@ export function StoreLocator() {
     return matchesSearch && matchesState && matchesCity;
   });
 
+  const featuredStores = STORES.filter((store) => store.featured).slice(0, 3);
+  const storesToDisplay = featured ? featuredStores : filteredStores;
+
   return (
-    <section className="py-12">
+    <section className="py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 rounded-lg">
         <div className="mx-auto max-w-2xl text-center mb-12 rounded-lg">
           <h2 className="text-3xl font-semibold mb-4 text-neutral-900 font-display rounded-lg">
-            Find a Store Near You
+            {featured ? "Our Stores" : "Find a Store Near You"}
           </h2>
           <p className="text-lg text-neutral-600 rounded-lg">
             Locate your nearest ClearVue store for expert eye care services
           </p>
         </div>
 
-        {/* Search and Filter Section */}
-        <div className="mb-8 space-y-4 rounded-lg">
-          <div className="flex flex-col sm:flex-row gap-4 rounded-lg">
-            {/* Search Input */}
-            <div className="relative flex-1 rounded-lg">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400 rounded-lg" />
-              <input
-                type="text"
-                placeholder="Search by location, city, or pincode..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-neutral-300 rounded-lg focus:ring-1 focus:ring-neutral-100 focus:border-neutral-300"
-              />
+        {/* Only show search and filters on the full stores page */}
+        {!featured && (
+          <div className="mb-8 space-y-4 rounded-lg">
+            <div className="flex flex-col sm:flex-row gap-4 rounded-lg">
+              {/* Search Input */}
+              <div className="relative flex-1 rounded-lg">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400 rounded-lg" />
+                <input
+                  type="text"
+                  placeholder="Search by location, city, or pincode..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-2 border border-neutral-300 rounded-lg focus:ring-1 focus:ring-neutral-100 focus:border-neutral-300 transition-colors duration-300 text-neutral-800"
+                />
+              </div>
+
+              <select
+                value={selectedState}
+                onChange={(e) => {
+                  setSelectedState(e.target.value);
+                  setSelectedCity("");
+                }}
+                className="px-4 py-2 border border-neutral-300 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:8px_8px] bg-no-repeat bg-[right_16px_center] pr-10 min-w-[140px] rounded-lg text-neutral-800"
+              >
+                <option value="">All States</option>
+                {states.map((state) => (
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                value={selectedCity}
+                onChange={(e) => setSelectedCity(e.target.value)}
+                className="px-4 py-2 border border-neutral-300 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:8px_8px] bg-no-repeat bg-[right_16px_center] pr-10 min-w-[140px] rounded-lg text-neutral-800"
+              >
+                <option value="">All Cities</option>
+                {cities.map((city) => (
+                  <option key={city} value={city}>
+                    {city}
+                  </option>
+                ))}
+              </select>
             </div>
-
-            <select
-              value={selectedState}
-              onChange={(e) => {
-                setSelectedState(e.target.value);
-                setSelectedCity("");
-              }}
-              className="px-4 py-2 border border-neutral-300 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:8px_8px] bg-no-repeat bg-[right_16px_center] pr-10 min-w-[140px] rounded-lg"
-            >
-              <option value="">All States</option>
-              {states.map((state) => (
-                <option key={state} value={state}>
-                  {state}
-                </option>
-              ))}
-            </select>
-
-            <select
-              value={selectedCity}
-              onChange={(e) => setSelectedCity(e.target.value)}
-              className="px-4 py-2 border border-neutral-300 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:8px_8px] bg-no-repeat bg-[right_16px_center] pr-10 min-w-[140px] rounded-lg"
-            >
-              <option value="">All Cities</option>
-              {cities.map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
-            </select>
           </div>
-        </div>
+        )}
 
-        <p className="text-neutral-600 mb-6 rounded-lg">
-          {filteredStores.length} stores found
-        </p>
+        {!featured && (
+          <p className="text-neutral-600 mb-6 rounded-lg">
+            {filteredStores.length} stores found
+          </p>
+        )}
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 rounded-lg">
-          {filteredStores.map((store) => (
+          {storesToDisplay.map((store) => (
             <div
               key={store.id}
               className="group bg-white overflow-hidden border border-neutral-200 hover:shadow-lg transition-all duration-300 flex flex-col h-[350px] rounded-2xl"
@@ -413,8 +439,19 @@ export function StoreLocator() {
           ))}
         </div>
 
+        {featured && (
+          <div className="mt-8 text-center">
+            <a
+              href="/stores"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-pink-600 hover:bg-pink-700 font-sans"
+            >
+              View All Stores
+            </a>
+          </div>
+        )}
+
         {/* No Results Message */}
-        {filteredStores.length === 0 && (
+        {!featured && filteredStores.length === 0 && (
           <div className="text-center py-12 rounded-lg">
             <p className="text-neutral-600 rounded-lg">
               No stores found matching your search criteria.
