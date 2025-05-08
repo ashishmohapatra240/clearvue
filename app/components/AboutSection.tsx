@@ -21,7 +21,7 @@ export function AboutSection() {
           {/* Right Content */}
           <div className="flex flex-col">
             <h2 className="text-[36px] font-semibold leading-[1.1] mb-6 text-neutral-900 tracking-tight font-display">
-              Crafting excellence since 1998
+              Crafting excellence since 2023
             </h2>
 
             <p className="text-neutral-900 text-lg mb-2 font-sans font-medium">

@@ -58,7 +58,7 @@ export function MissionSection() {
     {
       number: "2L+",
       title: "Happy Customers",
-      description: "Satisfied clients who trust our services.",
+      description: "Satisfied customers who trust us",
     },
   ];
 

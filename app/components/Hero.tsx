@@ -28,7 +28,7 @@ export function Hero() {
               </h1>
 
               <p className="text-sm sm:text-base md:text-lg text-white mb-8 sm:mb-12 leading-relaxed max-w-lg font-sans">
-              Swipe through styles that match your vibe and find your signature look!
+              Not just accessories—these are expressions. At ClearVue, we create frames that match your mood, elevate your look, and deliver perfect clarity every time. Your style, your rules, your ClearVue.
               </p>
 
               <a
