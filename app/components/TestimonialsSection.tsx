@@ -82,7 +82,7 @@ export function TestimonialsSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <header className="mb-16 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl font-display">
-            Our trusted clients
+            Our trusted customers
           </h2>
         </header>
 

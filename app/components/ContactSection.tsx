@@ -31,7 +31,7 @@ export function ContactSection() {
                 <input
                   type="text"
                   id="name"
-                  className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-md"
+                  className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-md text-neutral-800"
                   placeholder="John Doe"
                 />
               </div>
@@ -45,7 +45,7 @@ export function ContactSection() {
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-md"
+                  className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-md text-neutral-800"
                   placeholder="john@example.com"
                 />
               </div>
@@ -59,7 +59,7 @@ export function ContactSection() {
                 <textarea
                   id="message"
                   rows={4}
-                  className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-md"
+                  className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-md text-neutral-800"
                   placeholder="How can we help you?"
                 ></textarea>
               </div>
@@ -91,10 +91,10 @@ export function ContactSection() {
                     </p>
                     <p className="text-neutral-600 font-sans font-medium">
                       <a
-                        href="tel:+919876543210"
+                        href="tel:+918383954955"
                         className="hover:text-pink-600"
                       >
-                        +91 98765 43210
+                        +91 83839 54955
                       </a>
                     </p>
                   </div>
@@ -110,10 +110,10 @@ export function ContactSection() {
                     </p>
                     <p className="text-neutral-600 font-sans font-medium">
                       <a
-                        href="mailto:contact@clearvue.com"
+                        href="mailto:support@clearvue.co.in"
                         className="hover:text-pink-600"
                       >
-                        contact@clearvue.com
+                        support@clearvue.co.in
                       </a>
                     </p>
                   </div>
@@ -128,9 +128,8 @@ export function ContactSection() {
                       Head Office
                     </p>
                     <p className="text-neutral-600 font-sans font-medium">
-                      48, Ballupur Road, Chakrata Rd,
-                      <br />
-                      Dehradun, Uttarakhand 248001
+                      52/A, Chanakya Tower, Rajpur Road, Vishal Mega Mart,
+                      Chironwali, Dehradun, Uttarakhand, 248001
                     </p>
                   </div>
                 </div>
@@ -148,10 +147,10 @@ export function ContactSection() {
                   </p>
                   <div className="space-y-2 text-neutral-600">
                     <p className="font-sans font-medium">
-                      Monday - Saturday: 10:00 AM - 8:00 PM
+                      Sunday - Saturday: 10:00 AM - 8:00 PM
                     </p>
                     <p className="font-sans font-medium">
-                      Sunday: 11:00 AM - 6:00 PM
+                      Sunday: 10:00 AM - 9:00 PM
                     </p>
                   </div>
                 </div>
