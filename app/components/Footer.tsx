@@ -1,6 +1,22 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      const offsetTop =
+        element.getBoundingClientRect().top + window.pageYOffset - 80; // 80px offset for navbar
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <footer
       className="bg-cover bg-center text-white"
@@ -27,32 +43,38 @@ export function Footer() {
             <h4 className="font-medium mb-4">Quick Links</h4>
             <ul className="space-y-3 text-white">
               <li>
-                <a href="/about" className="hover:text-white transition-colors">
+                <a 
+                  href="#about" 
+                  onClick={(e) => handleScroll(e, "#about")}
+                  className="hover:text-white transition-colors"
+                >
                   About Us
                 </a>
               </li>
               <li>
-                <a
-                  href="/collection"
+                <a 
+                  href="#store-locator" 
+                  onClick={(e) => handleScroll(e, "#store-locator")}
                   className="hover:text-white transition-colors"
                 >
-                  Collection
+                  Store Locator
                 </a>
               </li>
               <li>
-                <a
-                  href="/book-appointment"
-                  className="hover:text-white transition-colors"
-                >
-                  Book Appointment
-                </a>
-              </li>
-              <li>
-                <a
+                <Link
                   href="/careers"
                   className="hover:text-white transition-colors"
                 >
                   Careers
+                </Link>
+              </li>
+              <li>
+                <a 
+                  href="#contact" 
+                  onClick={(e) => handleScroll(e, "#contact")}
+                  className="hover:text-white transition-colors"
+                >
+                  Contact Us
                 </a>
               </li>
             </ul>
@@ -104,18 +126,18 @@ export function Footer() {
               <span className="font-bold">RetailWiz Pvt. Ltd.</span>
             </p>
             <div className="flex gap-6 text-sm">
-              <a
+              <Link
                 href="/privacy"
                 className="text-white hover:text-white transition-colors"
               >
                 Privacy Policy
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/terms"
                 className="text-white hover:text-white transition-colors"
               >
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>
