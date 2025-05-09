@@ -1,6 +1,51 @@
+"use client";
+
 import { Phone, Mail, Clock, MapPin, Send } from "lucide-react";
+import { useState } from "react";
+import { submitContactForm } from "../actions/contact";
+import { useToast } from "../hooks/useToast";
 
 export function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const formData = new FormData(event.currentTarget);
+      const result = await submitContactForm(formData);
+
+      if (result.success) {
+        toast({
+          title: "Message sent!",
+          description:
+            "We've received your message and will get back to you soon.",
+          variant: "success",
+        });
+        // Reset the form
+        (event.target as HTMLFormElement).reset();
+      } else {
+        toast({
+          title: "Error",
+          description:
+            result.error || "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Error",
+        description: "Failed to send your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
     <section className="py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -20,7 +65,7 @@ export function ContactSection() {
             <h3 className="text-2xl font-semibold mb-6 text-neutral-900 font-display">
               Send us a Message
             </h3>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
@@ -31,8 +76,10 @@ export function ContactSection() {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-md text-neutral-800"
                   placeholder="John Doe"
+                  required
                 />
               </div>
               <div>
@@ -45,8 +92,10 @@ export function ContactSection() {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-md text-neutral-800"
                   placeholder="john@example.com"
+                  required
                 />
               </div>
               <div>
@@ -58,16 +107,19 @@ export function ContactSection() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={4}
                   className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-md text-neutral-800"
                   placeholder="How can we help you?"
+                  required
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center bg-pink-600 text-white py-3 px-6 font-medium hover:bg-pink-700 transition-colors font-sans rounded-full"
+                disabled={isSubmitting}
+                className="w-full inline-flex items-center justify-center bg-pink-600 text-white py-3 px-6 font-medium hover:bg-pink-700 transition-colors font-sans rounded-full disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
                 <Send className="ml-2 h-4 w-4 font-sans font-medium" />
               </button>
             </form>
