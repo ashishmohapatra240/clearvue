@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
+import { ToastProvider } from './hooks/useToast';
 const justSans = localFont({
   src: [
     {
@@ -140,9 +141,11 @@ export default function RootLayout({
       <body
         className={`${justSans.variable} ${heuvelGrotesk.variable} antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <ToastProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ToastProvider>
       </body>
     </html>
   );
