@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MapPin, Phone, Search } from "lucide-react";
+import Image from "next/image";
 
 const STORES = [
   {
@@ -17,6 +18,7 @@ const STORES = [
     status: "Active",
     shortAddress: "",
     featured: false,
+    image: "/images/stores/Dharampur.png",
   },
   {
     id: 2,
@@ -31,6 +33,7 @@ const STORES = [
     status: "Active",
     shortAddress: "",
     featured: false,
+    image: "/images/stores/nehru-colony.jpg",
   },
   {
     id: 3,
@@ -44,6 +47,7 @@ const STORES = [
     status: "Active",
     shortAddress: "",
     featured: false,
+    image: "/images/stores/Ballupur.png",
   },
   {
     id: 4,
@@ -57,6 +61,7 @@ const STORES = [
     status: "Active",
     shortAddress: "",
     featured: false,
+    image: "/images/stores/qutub-plaza.jpg",
   },
   {
     id: 5,
@@ -70,6 +75,7 @@ const STORES = [
     status: "Active",
     shortAddress: "",
     featured: false,
+    image: "/images/stores/jalgaon.jpg",
   },
   {
     id: 6,
@@ -83,6 +89,7 @@ const STORES = [
     status: "Active",
     shortAddress: "",
     featured: false,
+    image: "/images/stores/moga.jpg",
   },
   {
     id: 7,
@@ -97,6 +104,7 @@ const STORES = [
     status: "Active",
     shortAddress: "",
     featured: false,
+    image: "/images/stores/phagwara.jpg",
   },
   {
     id: 8,
@@ -111,6 +119,7 @@ const STORES = [
     status: "Active",
     shortAddress: "Infocity, Patia",
     featured: true,
+    image: "/images/stores/infocity.jpg",
   },
   {
     id: 9,
@@ -124,6 +133,7 @@ const STORES = [
     status: "Active",
     shortAddress: "ID Market",
     featured: true,
+    image: "/images/stores/id-market.jpg",
   },
   {
     id: 10,
@@ -138,6 +148,7 @@ const STORES = [
     status: "Active",
     shortAddress: "Civil Lines",
     featured: false,
+    image: "/images/stores/civil-line-ludhiana.jpg",
   },
   {
     id: 11,
@@ -152,6 +163,7 @@ const STORES = [
     status: "Active",
     shortAddress: "Ramanand Nagar",
     featured: true,
+    image: "/images/stores/jalgaon.jpg",
   },
   {
     id: 12,
@@ -165,6 +177,7 @@ const STORES = [
     status: "Active",
     shortAddress: "The Mall Road",
     featured: false,
+    image: "/images/stores/bhatinda.jpg",
   },
   {
     id: 13,
@@ -178,6 +191,7 @@ const STORES = [
     status: "Opening soon",
     shortAddress: "",
     featured: false,
+    image: "/images/stores/kishan-nagar.jpg",
   },
   {
     id: 14,
@@ -192,6 +206,7 @@ const STORES = [
     status: "Opening soon",
     shortAddress: "",
     featured: false,
+    image: "/images/stores/high-street-apollo.jpg",
   },
   {
     id: 15,
@@ -205,6 +220,7 @@ const STORES = [
     status: "Active",
     shortAddress: "Sector 10",
     featured: false,
+    image: "/images/stores/sector-10-faridabad.jpg",
   },
   {
     id: 16,
@@ -219,6 +235,7 @@ const STORES = [
     status: "Active",
     shortAddress: "NIT 5",
     featured: false,
+    image: "/images/stores/nit-5.jpg",
   },
   {
     id: 17,
@@ -233,6 +250,7 @@ const STORES = [
     status: "Active",
     shortAddress: "NIT 1",
     featured: false,
+    image: "/images/stores/nit-1.jpg",
   },
 ] as const;
 
@@ -352,8 +370,19 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
           {storesToDisplay.map((store) => (
             <div
               key={store.id}
-              className="group bg-white overflow-hidden border border-neutral-200 hover:shadow-lg transition-all duration-300 flex flex-col h-[350px] rounded-2xl"
+              className="group bg-white overflow-hidden border border-neutral-200 hover:shadow-lg transition-all duration-300 flex flex-col h-[580px] rounded-2xl"
             >
+              {/* Store Image */}
+              <div className="h-[200px] relative overflow-hidden">
+                <Image
+                  src={store.image}
+                  alt={`ClearVue store at ${store.city}`}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+
               {/* Header Section - Fixed Height */}
               <div className="bg-neutral-50 border-b border-neutral-200 p-4 h-[84px]">
                 <div className="flex items-center justify-between mb-3">
