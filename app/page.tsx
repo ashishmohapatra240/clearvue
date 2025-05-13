@@ -5,6 +5,7 @@ import { StoreLocator } from "./components/StoreLocator";
 import { VisionSection } from "./components/VisionSection";
 import { ContactSection } from "./components/ContactSection";
 import { TestimonialsSection } from "./components/TestimonialsSection";
+import Vision from "./components/Vision";
 
 export default function Home() {
   return (
@@ -15,11 +16,12 @@ export default function Home() {
       <div id="about">
         <AboutSection />
       </div>
-      <div id="coverage">
+      <div id="solutions">
         <VisionSection />
       </div>
       <div id="mission">
         <MissionSection />
+        <Vision/>
       </div>
       <div id="store-locator">
         <StoreLocator featured={true} />

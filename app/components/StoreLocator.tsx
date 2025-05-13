@@ -162,7 +162,7 @@ const STORES = [
     openingDate: "",
     status: "Active",
     shortAddress: "Ramanand Nagar",
-    featured: true,
+    featured: false,
     image: "/images/stores/jalgaon.jpg",
   },
   {
@@ -176,7 +176,7 @@ const STORES = [
     openingDate: "25-02-2025",
     status: "Active",
     shortAddress: "The Mall Road",
-    featured: false,
+    featured: true,
     image: "/images/stores/bhatinda.jpg",
   },
   {
@@ -249,7 +249,7 @@ const STORES = [
     openingDate: "",
     status: "Active",
     shortAddress: "NIT 1",
-    featured: false,
+    featured: true,
     image: "/images/stores/nit-1.jpg",
   },
 ] as const;
@@ -272,7 +272,6 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
   const [selectedState, setSelectedState] = useState<string>("");
   const [selectedCity, setSelectedCity] = useState<string>("");
 
-  // Get unique states and cities for filters
   const states = Array.from(new Set(STORES.map((store) => store.state))).sort();
   const cities = Array.from(
     new Set(
@@ -282,7 +281,6 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
     )
   ).sort();
 
-  // Filter stores based on search and selected filters
   const filteredStores = STORES.filter((store) => {
     const matchesSearch =
       searchQuery === "" ||
@@ -297,7 +295,7 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
     return matchesSearch && matchesState && matchesCity;
   });
 
-  const featuredStores = STORES.filter((store) => store.featured).slice(0, 3);
+  const featuredStores = STORES.filter((store) => store.featured).slice(0, 4);
   const storesToDisplay = featured ? featuredStores : filteredStores;
 
   return (
@@ -366,14 +364,14 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
           </p>
         )}
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 rounded-lg">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 rounded-lg">
           {storesToDisplay.map((store) => (
             <div
               key={store.id}
-              className="group bg-white overflow-hidden border border-neutral-200 hover:shadow-lg transition-all duration-300 flex flex-col h-[580px] rounded-2xl"
+              className="group bg-white overflow-hidden border border-neutral-200 hover:shadow-xl transition-all duration-300 flex flex-col h-auto rounded-2xl"
             >
               {/* Store Image */}
-              <div className="h-[200px] relative overflow-hidden">
+              <div className="h-[240px] relative overflow-hidden">
                 <Image
                   src={store.image}
                   alt={`ClearVue store at ${store.city}`}
@@ -381,27 +379,26 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-              </div>
-
-              {/* Header Section - Fixed Height */}
-              <div className="bg-neutral-50 border-b border-neutral-200 p-4 h-[84px]">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-lg font-semibold text-neutral-900 truncate">
-                    {store.shortAddress || store.city}
+                {/* Add gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                {/* Add store name and address */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <h3 className="text-lg font-semibold">
+                    {store.name}, {store.shortAddress || store.city}
                   </h3>
-                  <span
-                    className={`inline-flex items-center px-2.5 py-0.5 text-xs font-medium shrink-0 ml-2 ${
-                      store.status === "Active"
-                        ? "bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full"
-                        : "bg-amber-50 text-amber-700 border border-amber-200 rounded-full"
-                    }`}
-                  >
-                    {store.status}
-                  </span>
+                  <p className="text-sm text-white">
+                    {store.city}, {store.state}
+                  </p>
                 </div>
-                <p className="text-sm text-neutral-600 truncate rounded-lg">
-                  {store.city}, {store.state}
-                </p>
+                <span
+                  className={`absolute top-4 right-4 inline-flex items-center px-2.5 py-0.5 text-xs font-medium ${
+                    store.status === "Active"
+                      ? " text-white  bg-emerald-700"
+                      : " text-white bg-amber-700"
+                  } rounded-full`}
+                >
+                  {store.status}
+                </span>
               </div>
 
               {/* Content Section - Flexible Height with Scroll if needed */}
@@ -438,7 +435,7 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
               </div>
 
               {/* Actions Section - Fixed Height */}
-              <div className="border-t border-neutral-200 p-4 bg-neutral-50 mt-auto rounded-lg">
+              <div className="border-t border-neutral-200 p-4 bg-pink-50 mt-auto rounded-b-lg">
                 <div className="grid grid-cols-2 gap-3 rounded-lg">
                   <button
                     onClick={() =>

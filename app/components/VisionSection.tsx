@@ -4,7 +4,7 @@ export function VisionSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-4xl font-semibold mb-4 text-neutral-900 font-display">
-            We offer wide range of coverage
+            One Destination, Many Solutions
           </h2>
         </div>
 

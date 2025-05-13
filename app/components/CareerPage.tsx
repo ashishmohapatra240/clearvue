@@ -3,34 +3,38 @@
 import { useState } from "react";
 import { submitJobApplication } from "../actions/careers";
 import { useToast } from "../hooks/useToast";
-import { Briefcase, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { Briefcase, MapPin, Clock, Send, CheckCircle, Eye, Wrench } from "lucide-react";
 
 interface JobListing {
   title: string;
   location: string;
   type: string;
+  icon: React.ReactNode;
   description: string;
 }
 
 const jobListings: JobListing[] = [
   {
-    title: "Optical Sales Consultant",
-    location: "Dehradun, Uttarakhand",
+    title: "Store Manager (Optometrist)",
+    location: "Multiple Locations",
     type: "Full-time",
+    icon: <Briefcase className="h-5 w-5 text-pink-600" />,
     description:
-      "Join our team as an Optical Sales Consultant and help customers find their perfect eyewear while providing exceptional service and expert advice.",
+      "Join our team as Store Manager-cum-Optometrist and help customers find their perfect eyewear while providing exceptional service, expert advice and managing the team.",
   },
   {
     title: "Licensed Optometrist",
     location: "Multiple Locations",
     type: "Full-time",
+    icon: <Eye className="h-5 w-5 text-pink-600" />,
     description:
       "We're seeking experienced Optometrists to join our growing team. Provide comprehensive eye examinations and patient care in our state-of-the-art facilities.",
   },
   {
     title: "Optical Lab Technician",
-    location: "Dehradun, Uttarakhand",
+    location: "Multiple Locations",
     type: "Full-time",
+    icon: <Wrench className="h-5 w-5 text-pink-600" />,
     description:
       "Work with cutting-edge equipment to process, cut, and fit lenses according to prescriptions while maintaining high quality standards.",
   },
@@ -123,7 +127,7 @@ export default function CareerPage() {
               >
                 <div className="flex justify-between items-start mb-4">
                   <div className="p-2 bg-pink-100 rounded-lg">
-                    <Briefcase className="h-5 w-5 text-pink-600" />
+                    {job.icon}
                   </div>
                   {selectedJob === job.title && (
                     <CheckCircle className="h-5 w-5 text-pink-600" />
@@ -144,7 +148,7 @@ export default function CareerPage() {
                   {job.description}
                 </p>
                 <button
-                  className="text-pink-600 font-medium text-sm hover:text-pink-700 flex items-center"
+                  className="text-white font-medium text-sm hover:text-white flex items-center justify-center w-full bg-pink-700 rounded-full py-2"
                   onClick={() => {
                     setSelectedJob(job.title);
                     document
@@ -152,7 +156,7 @@ export default function CareerPage() {
                       ?.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
-                  Apply Now <Send className="ml-1 h-3 w-3" />
+                  Apply Now
                 </button>
               </div>
             ))}
@@ -168,8 +172,8 @@ export default function CareerPage() {
               Apply Now
             </h2>
             <p className="text-neutral-600 font-sans">
-              Fill in your details below and take the first step toward a
-              clearer, brighter career with ClearVue.
+              Fill in your details below and take the first step towards a
+              clearer and brighter career with ClearVue.
             </p>
           </div>
 
@@ -317,7 +321,7 @@ export default function CareerPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors font-sans flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full px-6 py-3 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition-colors font-sans flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Submitting..." : "Submit Application"}
                 {!isSubmitting && <Send className="ml-2 h-4 w-4" />}

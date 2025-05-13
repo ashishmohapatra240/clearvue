@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const NAVIGATION_ITEMS = [
   { name: "About", href: "#about" },
-  { name: "Coverage", href: "#coverage" },
+  { name: "Solutions", href: "#solutions" },
   { name: "Mission", href: "#mission" },
   { name: "Store Locator", href: "#store-locator" },
   { name: "Contact", href: "#contact" },
