@@ -24,11 +24,14 @@ export function Hero() {
           <div className="flex-1 flex items-center py-12 sm:py-16 lg:py-32 z-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl">
               <h1 className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-4 sm:mb-2 text-white tracking-tight font-display">
-              Find Your Frame Game
+                Find Your Frame Game
               </h1>
 
               <p className="text-sm sm:text-base md:text-lg text-white mb-8 sm:mb-12 leading-relaxed max-w-lg font-sans">
-              Not just accessories—these are expressions. At ClearVue, we create frames that match your mood, elevate your look, and deliver perfect clarity every time. Your style, your rules, your ClearVue.
+                Not just accessories—these are expressions. At ClearVue, we
+                create frames that match your mood, elevate your look, and
+                deliver perfect clarity every time. Your style, your rules, your
+                ClearVue.
               </p>
 
               <a
@@ -48,10 +51,10 @@ export function Hero() {
               width={1100}
               height={900}
               className="absolute bottom-0 max-w-none object-contain pointer-events-none
-                left-1/2 sm:left-auto
+                 left-[20%] sm:left-auto
                 -translate-x-1/2 sm:translate-x-0
-                right-auto sm:right-[-20%] lg:right-[-60%]
-                w-[200%] sm:w-[140%] lg:w-[160%]"
+                right-auto sm:right-[-10%] lg:right-[-60%]
+                w-[250%] sm:w-[160%] lg:w-[240%]"
               priority
             />
           </div>
