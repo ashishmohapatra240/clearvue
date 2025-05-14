@@ -40,11 +40,11 @@ export function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/images/logo.png"
+                src="/images/logo-black.png"
                 alt="logo"
                 width={200}
                 height={200}
-                className="w-20 sm:w-24 md:w-32 lg:w-40 xl:w-48"
+                className="w-20 sm:w-24 md:w-32 lg:w-40 xl:w-48 object-cover"
               />
             </Link>
           </div>

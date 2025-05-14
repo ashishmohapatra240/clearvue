@@ -1,8 +1,9 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="container mx-auto px-4 py-40 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
-      <p className="text-gray-600 mb-4">Effective Date: 07th May, 2025</p>
+    <section className=" bg-white">
+      <div className="container mx-auto px-4 py-40 max-w-4xl text-black">
+        <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
+        <p className="text-gray-600 mb-4">Effective Date: 07th May, 2025</p>
 
       <div className="prose max-w-none">
         <p>
@@ -155,8 +156,9 @@ export default function PrivacyPolicy() {
           Address: 52/A, Chanakya Tower, Rajpur Road, Vishal Mega Mart,
           <br />
           Chironwali, Dehradun, Uttarakhand, 248001
-        </p>
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

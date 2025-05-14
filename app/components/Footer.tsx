@@ -4,7 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
@@ -43,8 +46,8 @@ export function Footer() {
             <h4 className="font-medium mb-4">Quick Links</h4>
             <ul className="space-y-3 text-white">
               <li>
-                <a 
-                  href="#about" 
+                <a
+                  href="#about"
                   onClick={(e) => handleScroll(e, "#about")}
                   className="hover:text-white transition-colors"
                 >
@@ -52,8 +55,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#store-locator" 
+                <a
+                  href="#store-locator"
                   onClick={(e) => handleScroll(e, "#store-locator")}
                   className="hover:text-white transition-colors"
                 >
@@ -69,8 +72,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a 
-                  href="#contact" 
+                <a
+                  href="#contact"
                   onClick={(e) => handleScroll(e, "#contact")}
                   className="hover:text-white transition-colors"
                 >
@@ -86,22 +89,23 @@ export function Footer() {
             <ul className="space-y-3 text-white">
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+918383954955"
                   className="hover:text-white transition-colors"
                 >
-                  +91 98765 43210
+                  +91 83839 54955
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:contact@clearvue.com"
+                  href="mailto:support@clearvue.co.in"
                   className="hover:text-white transition-colors"
                 >
-                  contact@clearvue.com
+                  support@clearvue.co.in
                 </a>
               </li>
               <li className="max-w-xs">
-                48, Ballupur Road, Dehradun, Uttarakhand 248001
+                52/A, Chanakya Tower, Rajpur Road, Vishal Mega Mart, Chironwali,
+                Dehradun, Uttarakhand, 248001
               </li>
             </ul>
           </div>
@@ -110,10 +114,7 @@ export function Footer() {
           <div>
             <h4 className="font-medium mb-4">Business Hours</h4>
             <ul className="space-y-3 text-white">
-              <li>Monday - Saturday</li>
-              <li>10:00 AM - 8:00 PM</li>
-              <li>Sunday</li>
-              <li>11:00 AM - 6:00 PM</li>
+              <span className="font-bold">Sun-Sat: </span>10:00 A.M to 9:00 PM
             </ul>
           </div>
         </div>

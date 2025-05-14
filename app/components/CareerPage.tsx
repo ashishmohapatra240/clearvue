@@ -171,7 +171,7 @@ export default function CareerPage() {
             <h2 className="font-display text-3xl sm:text-4xl mb-4 text-neutral-900 tracking-tight">
               Apply Now
             </h2>
-            <p className="text-neutral-600 font-sans">
+            <p className="text-black font-sans">
               Fill in your details below and take the first step towards a
               clearer and brighter career with ClearVue.
             </p>
@@ -184,7 +184,7 @@ export default function CareerPage() {
             <div>
               <label
                 htmlFor="fullName"
-                className="block text-sm font-medium text-neutral-700 mb-1"
+                className="block text-sm font-medium text-black mb-1"
               >
                 Full Name
               </label>
@@ -192,7 +192,7 @@ export default function CareerPage() {
                 type="text"
                 id="fullName"
                 name="fullName"
-                className="w-full px-4 py-3 border border-neutral-300 rounded-lg"
+                className="w-full px-4 py-3 border border-neutral-300 rounded-lg text-neutral-900"
                 required
               />
             </div>
@@ -200,7 +200,7 @@ export default function CareerPage() {
             <div>
               <label
                 htmlFor="phone"
-                className="block text-sm font-medium text-neutral-700 mb-1"
+                className="block text-sm font-medium text-black mb-1"
               >
                 Phone Number
               </label>
@@ -208,7 +208,7 @@ export default function CareerPage() {
                 type="tel"
                 id="phone"
                 name="phone"
-                className="w-full px-4 py-3 border border-neutral-300 rounded-lg"
+                className="w-full px-4 py-3 border border-neutral-300 rounded-lg text-neutral-900"
                 required
               />
             </div>
@@ -216,7 +216,7 @@ export default function CareerPage() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-neutral-700 mb-1"
+                className="block text-sm font-medium text-black mb-1"
               >
                 Email Address
               </label>
@@ -224,7 +224,7 @@ export default function CareerPage() {
                 type="email"
                 id="email"
                 name="email"
-                className="w-full px-4 py-3 border border-neutral-300 rounded-lg"
+                className="w-full px-4 py-3 border border-neutral-300 rounded-lg text-neutral-900"
                 required
               />
             </div>
@@ -232,7 +232,7 @@ export default function CareerPage() {
             <div>
               <label
                 htmlFor="address"
-                className="block text-sm font-medium text-neutral-700 mb-1"
+                className="block text-sm font-medium text-black mb-1"
               >
                 Current Address
               </label>
@@ -240,7 +240,7 @@ export default function CareerPage() {
                 id="address"
                 name="address"
                 rows={3}
-                className="w-full px-4 py-3 border border-neutral-300 rounded-lg"
+                className="w-full px-4 py-3 border border-neutral-300 rounded-lg text-neutral-900"
                 required
               />
             </div>
@@ -248,7 +248,7 @@ export default function CareerPage() {
             <div>
               <label
                 htmlFor="position"
-                className="block text-sm font-medium text-neutral-700 mb-1"
+                className="block text-sm font-medium text-black mb-1"
               >
                 Position Applying For
               </label>
@@ -257,7 +257,7 @@ export default function CareerPage() {
                 name="position"
                 value={selectedJob || ""}
                 onChange={(e) => setSelectedJob(e.target.value)}
-                className="w-full px-4 py-3 border border-neutral-300 rounded-lg"
+                className="w-full px-4 py-3 border border-neutral-300 rounded-lg text-neutral-900 bg-white"
                 required
               >
                 <option value="">Select a position</option>
@@ -273,14 +273,14 @@ export default function CareerPage() {
             <div>
               <label
                 htmlFor="location"
-                className="block text-sm font-medium text-neutral-700 mb-1"
+                className="block text-sm font-medium text-black mb-1"
               >
                 Preferred On-site Location
               </label>
               <select
                 id="location"
                 name="location"
-                className="w-full px-4 py-3 border border-neutral-300 rounded-lg"
+                className="w-full px-4 py-3 border border-neutral-300 rounded-lg text-neutral-900 bg-white"
                 required
               >
                 <option value="">Select a location</option>
@@ -304,7 +304,7 @@ export default function CareerPage() {
             <div>
               <label
                 htmlFor="resume"
-                className="block text-sm font-medium text-neutral-700 mb-1"
+                className="block text-sm font-medium text-black mb-1"
               >
                 Resume Drive Link (Google Drive)
               </label>
@@ -312,7 +312,7 @@ export default function CareerPage() {
                 type="text"
                 id="resume"
                 name="resume"
-                className="w-full px-4 py-3 border border-neutral-300 rounded-lg"
+                className="w-full px-4 py-3 border border-neutral-300 rounded-lg text-neutral-900"
                 required
               />
             </div>
@@ -432,7 +432,7 @@ export default function CareerPage() {
         </div>
       </div>
 
-      {/* Benefits Section - New Addition */}
+      {/* Benefits Section - New Addition
       <div className="py-16 bg-neutral-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -512,7 +512,7 @@ export default function CareerPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Contact Section */}
       <div className="py-16 bg-white">

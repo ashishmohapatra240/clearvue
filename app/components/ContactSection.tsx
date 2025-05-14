@@ -199,10 +199,7 @@ export function ContactSection() {
                   </p>
                   <div className="space-y-2 text-neutral-600">
                     <p className="font-sans font-medium">
-                      Sunday - Saturday: 10:00 AM - 8:00 PM
-                    </p>
-                    <p className="font-sans font-medium">
-                      Sunday: 10:00 AM - 9:00 PM
+                      Sun-Sat: 10:00 A.M to 9:00 PM
                     </p>
                   </div>
                 </div>
