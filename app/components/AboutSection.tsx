@@ -4,7 +4,7 @@ import Image from "next/image";
 export function AboutSection() {
   return (
     <section className="py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Left Image */}
           <div className="relative">
@@ -20,7 +20,7 @@ export function AboutSection() {
 
           {/* Right Content */}
           <div className="flex flex-col">
-            <h2 className="text-[36px] font-semibold leading-[1.1] mb-6 text-neutral-900 tracking-tight font-display">
+            <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display">
               Crafting excellence since 2023
             </h2>
 

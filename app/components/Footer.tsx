@@ -25,7 +25,7 @@ export function Footer() {
       className="bg-cover bg-center text-white"
       style={{ backgroundImage: "url('/images/background.png')" }}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12 lg:py-16">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-4">

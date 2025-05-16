@@ -79,9 +79,9 @@ export function TestimonialsSection() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-40 t"></div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40"></div>
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
         <header className="mb-16 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl font-display">
+          <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display">
             Our trusted customers
           </h2>
         </header>

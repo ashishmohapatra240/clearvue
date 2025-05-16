@@ -64,7 +64,7 @@ export function MissionSection() {
 
   return (
     <section className="py-24 bg-gradient-to-b from-white to-neutral-50">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
         <div className="mx-auto text-center mb-20">
           <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display">
             Our Mission

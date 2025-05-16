@@ -18,7 +18,7 @@ export function Hero() {
       className="relative pt-16 sm:pt-20 bg-cover bg-center overflow-hidden"
       style={{ backgroundImage: "url('/images/background.png')" }}
     >
-      <div className="relative max-w-7xl mx-auto ">
+      <div className="relative max-w-[1400px] mx-auto">
         <div className="flex flex-col lg:flex-row">
           {/* LEFT COPY  ─────────────────────────────── */}
           <div className="flex-1 flex items-center py-12 sm:py-16 lg:py-32 z-10 px-4 sm:px-6 lg:px-8">
@@ -53,8 +53,8 @@ export function Hero() {
               className="absolute bottom-0 max-w-none object-contain pointer-events-none
                  left-[20%] sm:left-auto
                 -translate-x-1/2 sm:translate-x-0
-                right-auto sm:right-[-10%] lg:right-[-60%]
-                w-[250%] sm:w-[160%] lg:w-[240%]"
+                right-auto sm:right-[-10%] lg:right-[-40%]
+                w-[250%] sm:w-[160%] lg:w-[220%]"
               priority
             />
           </div>

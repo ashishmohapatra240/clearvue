@@ -88,7 +88,7 @@ export default function CareerPage() {
     <div className="bg-white">
       {/* Hero Section */}
       <div className="relative pt-36 pb-16 bg-gradient-to-b from-neutral-50 to-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
           <div className="max-w-2xl">
             <h1 className="font-display text-4xl sm:text-5xl mb-6 text-neutral-900 tracking-tight">
               Join Our Vision for Excellence
@@ -103,7 +103,7 @@ export default function CareerPage() {
 
       {/* Current Openings Section */}
       <div className="py-16 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl sm:text-4xl mb-4 text-neutral-900 tracking-tight">
               Current Openings
@@ -340,7 +340,7 @@ export default function CareerPage() {
 
       {/* Values Section */}
       <div className="py-16 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl sm:text-4xl mb-4 text-neutral-900 tracking-tight">
               Our Values
@@ -434,7 +434,7 @@ export default function CareerPage() {
 
       {/* Benefits Section - New Addition
       <div className="py-16 bg-neutral-50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl sm:text-4xl mb-4 text-neutral-900 tracking-tight">
               Why Work With Us
@@ -516,7 +516,7 @@ export default function CareerPage() {
 
       {/* Contact Section */}
       <div className="py-16 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-8 text-center">
           <h2 className="font-display text-2xl sm:text-3xl mb-4 text-neutral-900">
             Don&apos;t see the right position?
           </h2>

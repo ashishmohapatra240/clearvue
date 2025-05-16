@@ -300,9 +300,9 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
 
   return (
     <section className="py-20 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 rounded-lg">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 rounded-lg">
         <div className="mx-auto max-w-2xl text-center mb-12 rounded-lg">
-          <h2 className="text-3xl font-semibold mb-4 text-neutral-900 font-display rounded-lg">
+          <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display">
             {featured ? "Our Stores" : "Find a Store Near You"}
           </h2>
           <p className="text-lg text-neutral-600 rounded-lg">
@@ -376,7 +376,7 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
                   src={store.image}
                   alt={`ClearVue store at ${store.city}`}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover transition-all duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 {/* Add gradient overlay */}
@@ -402,7 +402,7 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
               </div>
 
               {/* Content Section - Flexible Height with Scroll if needed */}
-              <div className="p-4 space-y-4 flex-1 overflow-y-auto rounded-lg">
+              <div className="p-4 space-y-4 flex-1 overflow-y-auto rounded-lg justify-between flex flex-col">
                 {/* Address Section */}
                 <div className="flex items-start gap-3 rounded-lg">
                   <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-pink-600 rounded-lg" />
@@ -435,7 +435,7 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
               </div>
 
               {/* Actions Section - Fixed Height */}
-              <div className="border-t border-neutral-200 p-4 bg-pink-50 mt-auto rounded-b-lg">
+              <div className="border-t border-neutral-200 p-4 bg-neutral-50 mt-auto rounded-b-lg">
                 <div className="grid grid-cols-2 gap-3 rounded-lg">
                   <button
                     onClick={() =>

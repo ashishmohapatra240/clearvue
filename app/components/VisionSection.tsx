@@ -1,9 +1,9 @@
 export function VisionSection() {
   return (
     <section className="py-24 bg-neutral-50">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-4xl font-semibold mb-4 text-neutral-900 font-display">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display">
             One Destination, Many Solutions
           </h2>
         </div>
