@@ -2,10 +2,10 @@ import { AboutSection } from "./components/AboutSection";
 import { Hero } from "./components/Hero";
 import { MissionSection } from "./components/MissionSection";
 import { StoreLocator } from "./components/StoreLocator";
-import { VisionSection } from "./components/VisionSection";
 import { ContactSection } from "./components/ContactSection";
 import { TestimonialsSection } from "./components/TestimonialsSection";
 import Vision from "./components/Vision";
+import { BentoGrid } from "./components/BentoGrid";
 
 export default function Home() {
   return (
@@ -17,11 +17,11 @@ export default function Home() {
         <AboutSection />
       </div>
       <div id="solutions">
-        <VisionSection />
+        <BentoGrid />
       </div>
       <div id="mission">
         <MissionSection />
-        <Vision/>
+        <Vision />
       </div>
       <div id="store-locator">
         <StoreLocator featured={true} />
