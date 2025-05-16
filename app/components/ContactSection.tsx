@@ -47,16 +47,26 @@ export function ContactSection() {
   }
 
   return (
-    <section className="py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="pb-24 bg-white">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-4xl font-semibold mb-6 text-neutral-900 tracking-tight font-display">
-            Get in Touch
-          </h2>
-          <p className="text-lg text-neutral-600 font-sans font-medium tracking-tight">
-            Have questions? We&apos;re here to help. Contact us through any of
-            the channels below.
-          </p>
+          <div className="flex flex-col items-center justify-center h-[100px] mb-60">
+            <video
+              src="/videos/get-in-touch.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-64 h-auto relative z-0 top-20"
+            />
+            <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display z-10 relative">
+              Get in Touch
+            </h2>
+            <p className="text-lg text-neutral-600 font-sans font-medium tracking-tight">
+              Have questions? We&apos;re here to help. Contact us through any of
+              the channels below.
+            </p>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
