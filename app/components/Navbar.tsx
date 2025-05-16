@@ -15,15 +15,21 @@ const NAVIGATION_ITEMS = [
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleScroll = (
+  const handleScroll = async (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
     e.preventDefault();
+
+    if (window.location.pathname !== "/") {
+      window.location.href = `/${href}`;
+      return;
+    }
+
     const element = document.querySelector(href);
     if (element) {
       const offsetTop =
-        element.getBoundingClientRect().top + window.pageYOffset - 80; // 80px offset for navbar
+        element.getBoundingClientRect().top + window.pageYOffset - 80;
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth",
@@ -34,7 +40,7 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white  backdrop-blur-lg border-b border-neutral-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
