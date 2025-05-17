@@ -30,7 +30,7 @@ export function Footer() {
         alt="ClearVue"
         width={800}
         height={800}
-        className="absolute bottom-10 -right-60 mix-blend-screen"
+        className="absolute bottom-0 md:bottom-10 md:-right-60 mix-blend-screen"
       />
       <div className="mx-auto max-w-[1400px] px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
