@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { motion } from "framer-motion";
 // import { Quote } from "lucide-react";
 
 const testimonials = [
@@ -82,11 +83,17 @@ export function TestimonialsSection() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40"></div>
 
       <div className="mx-auto max-w-[1400px] px-6 lg:px-8 py-10">
-        <header className="mb-16 text-center">
+        <motion.header 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-16 text-center"
+        >
           <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display">
             Our trusted customers
           </h2>
-        </header>
+        </motion.header>
 
         <Marquee
           gradient={false}
@@ -95,8 +102,10 @@ export function TestimonialsSection() {
           className="overflow-x-hidden"
         >
           {testimonials.map((t, i) => (
-            <article
+            <motion.article
               key={i}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
               className="relative flex h-[320px] flex-col rounded-3xl bg-white p-8 shadow-md ring-1 ring-slate-100 mx-4 w-[400px] my-4"
             >
               <div className="flex-1">
@@ -123,7 +132,7 @@ export function TestimonialsSection() {
                   </div>
                 </footer>
               </div>
-            </article>
+            </motion.article>
           ))}
         </Marquee>
       </div>

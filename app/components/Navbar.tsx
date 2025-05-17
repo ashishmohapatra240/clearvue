@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NAVIGATION_ITEMS = [
   { name: "About", href: "#about" },
@@ -39,44 +40,54 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white  backdrop-blur-lg border-b border-neutral-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-lg border-b border-neutral-200">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/images/logo-black.png"
-                alt="logo"
-                width={200}
-                height={200}
-                className="w-20 sm:w-24 md:w-32 lg:w-40 xl:w-48 object-cover"
-              />
-            </Link>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Link href="/" className="flex items-center gap-2">
+                <Image
+                  src="/images/logo-black.png"
+                  alt="logo"
+                  width={200}
+                  height={200}
+                  className="w-20 sm:w-24 md:w-32 lg:w-40 xl:w-48 object-cover"
+                />
+              </Link>
+            </motion.div>
           </div>
 
-          <div className="flex items-center justify-end lg:gap-12 ">
-            <div className="hidden lg:flex lg:items-center lg:gap-8 ">
+          <div className="flex items-center justify-end lg:gap-12">
+            <div className="hidden lg:flex lg:items-center lg:gap-8">
               {NAVIGATION_ITEMS.map((item) => (
-                <a
+                <motion.a
                   key={item.name}
+                  whileHover={{ y: -1 }}
+                  transition={{ duration: 0.2 }}
                   href={item.href}
                   onClick={(e) => handleScroll(e, item.href)}
                   className="text-sm font-medium text-neutral-700 hover:text-neutral-900 hover:underline transition-colors cursor-pointer font-sans"
                 >
                   {item.name}
-                </a>
+                </motion.a>
               ))}
             </div>
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex lg:items-center lg:gap-4">
-              <a
+              <motion.a
+                whileHover={{ y: -4 }}
+                whileTap={{ y: 1 }}
+                transition={{ duration: 0.2 }}
                 href="/careers"
-                className="inline-flex items-center justify-center bg-pink-600 px-4 py-2 text-sm font-medium text-white transition-colors rounded-full font-sans"
+                className="inline-flex items-center justify-center bg-pink-600 px-4 py-2 text-sm font-medium text-white transition-colors rounded-full font-sans hover:bg-pink-700"
               >
                 Careers
-              </a>
+              </motion.a>
             </div>
           </div>
 
@@ -122,29 +133,51 @@ export function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden">
-            <div className="space-y-1 pb-3 pt-2">
-              {NAVIGATION_ITEMS.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => handleScroll(e, item.href)}
-                  className="block px-3 py-2 text-base font-medium text-neutral-700 hover:bg-neutral-100 transition-colors"
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="lg:hidden"
+            >
+              <div className="space-y-1 pb-3 pt-2">
+                {NAVIGATION_ITEMS.map((item, index) => (
+                  <motion.a
+                    key={item.name}
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.15,
+                      delay: index * 0.05,
+                      ease: "easeOut",
+                    }}
+                    href={item.href}
+                    onClick={(e) => handleScroll(e, item.href)}
+                    className="block px-3 py-2 text-base font-medium text-neutral-700 hover:bg-neutral-100 transition-colors"
+                  >
+                    {item.name}
+                  </motion.a>
+                ))}
+                <motion.a
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.15,
+                    delay: NAVIGATION_ITEMS.length * 0.05,
+                    ease: "easeOut",
+                  }}
+                  href="#contact"
+                  onClick={(e) => handleScroll(e, "#contact")}
+                  className="block px-3 py-2 text-base font-medium text-neutral-900"
                 >
-                  {item.name}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                onClick={(e) => handleScroll(e, "#contact")}
-                className="block px-3 py-2 text-base font-medium text-neutral-900"
-              >
-                Contact Us
-              </a>
-            </div>
-          </div>
-        )}
+                  Contact Us
+                </motion.a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

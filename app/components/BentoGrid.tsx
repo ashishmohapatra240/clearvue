@@ -1,32 +1,137 @@
 "use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 40 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, ease: "easeOut" },
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const imageHover = {
+  rest: { scale: 1 },
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+};
+
+const cardVariants = {
+  initial: {
+    opacity: 0,
+    y: 20,
+    scale: 0.95,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.4, 0, 0.2, 1],
+    },
+  },
+  hover: {
+    scale: 1.02,
+    boxShadow:
+      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+    },
+  },
+  tap: {
+    scale: 0.98,
+    transition: {
+      duration: 0.15,
+    },
+  },
+};
+
+const textReveal = {
+  initial: { opacity: 0, y: 20 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 export function BentoGrid() {
   return (
-    <section className="py-12 sm:py-24 bg-white">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6">
+    <motion.section
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, margin: "-100px" }}
+      className="py-12 sm:py-24 bg-white"
+    >
+      <motion.div
+        variants={staggerContainer}
+        className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
+      >
         {/* First Section - 1:2 Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+        <motion.div
+          variants={fadeInUp}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6"
+        >
           {/* Left Large Card */}
-          <div className="relative rounded-3xl overflow-hidden aspect-square lg:aspect-auto">
-            <Image
-              src="/images/bento/style-meets-clarity.png"
-              alt="Stylish person wearing sunglasses"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#E52D93] via-[#4F97DA]/10 to-transparent" />
-            <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8">
+          <motion.div
+            variants={cardVariants}
+            initial="initial"
+            whileInView="animate"
+            whileHover="hover"
+            whileTap="tap"
+            className="relative rounded-3xl overflow-hidden aspect-square lg:aspect-auto cursor-pointer"
+          >
+            <motion.div
+              variants={imageHover}
+              initial="rest"
+              whileHover="hover"
+              className="relative w-full h-full"
+            >
+              <Image
+                src="/images/bento/style-meets-clarity.png"
+                alt="Stylish person wearing sunglasses"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#E52D93] via-[#4F97DA]/10 to-transparent" />
+            </motion.div>
+            <motion.div
+              variants={textReveal}
+              className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8"
+            >
               <h2 className="text-2xl sm:text-4xl font-display text-white font-semibold">
                 Style Meets Clarity
               </h2>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Column with Two Cards */}
           <div className="space-y-4 sm:space-y-6">
             {/* Top Card */}
-            <div className="bg-white rounded-3xl border border-neutral-200">
+            <motion.div
+              variants={cardVariants}
+              initial="initial"
+              whileInView="animate"
+              whileHover="hover"
+              whileTap="tap"
+              className="bg-white rounded-3xl border border-neutral-200 cursor-pointer"
+            >
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-8">
                 <Image
                   src="/images/bento/optometrist.png"
@@ -48,10 +153,17 @@ export function BentoGrid() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Bottom Card */}
-            <div className="bg-white rounded-3xl border border-neutral-200 relative">
+            <motion.div
+              variants={cardVariants}
+              initial="initial"
+              whileInView="animate"
+              whileHover="hover"
+              whileTap="tap"
+              className="bg-white rounded-3xl border border-neutral-200 relative cursor-pointer"
+            >
               <div className="flex flex-col-reverse sm:flex-row items-start gap-4 sm:gap-8">
                 <div className="p-4 sm:p-8">
                   <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2 text-[#000]">
@@ -73,20 +185,41 @@ export function BentoGrid() {
                   className="w-48 sm:w-[250px] relative sm:right-10 sm:-top-20 mx-auto"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Second Section - Single Card */}
-        <div className="bg-white rounded-3xl border border-neutral-200">
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 p-6 sm:p-16 justify-center">
-            <Image
-              src="/images/bento/infinity.png"
-              alt="Infinity symbol"
-              width={80}
-              height={40}
-              className="text-blue-500 sm:w-[120px]"
-            />
+        <motion.div
+          variants={cardVariants}
+          initial="initial"
+          whileInView="animate"
+          whileHover="hover"
+          whileTap="tap"
+          className="bg-white rounded-3xl border border-neutral-200 cursor-pointer"
+        >
+          <motion.div
+            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 p-6 sm:p-16 justify-center"
+            variants={textReveal}
+          >
+            <motion.div
+              animate={{
+                rotate: [0, 360],
+                transition: {
+                  duration: 20,
+                  ease: "linear",
+                  repeat: Infinity,
+                },
+              }}
+            >
+              <Image
+                src="/images/bento/infinity.png"
+                alt="Infinity symbol"
+                width={80}
+                height={40}
+                className="text-blue-500 sm:w-[120px]"
+              />
+            </motion.div>
             <div>
               <h3 className="text-3xl sm:text-5xl font-display font-semibold mb-2 sm:mb-4 text-center text-[#000]">
                 Your Glasses, Ready in{" "}
@@ -99,13 +232,23 @@ export function BentoGrid() {
                 hours - crafted & fitted, at record speed.
               </p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Third Section - 1:1 Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+        <motion.div
+          variants={fadeInUp}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6"
+        >
           {/* Left Card */}
-          <div className="bg-white rounded-3xl border border-neutral-200 h-auto">
+          <motion.div
+            variants={cardVariants}
+            initial="initial"
+            whileInView="animate"
+            whileHover="hover"
+            whileTap="tap"
+            className="bg-white rounded-3xl border border-neutral-200 h-auto cursor-pointer"
+          >
             <div className="flex flex-col lg:flex-row items-start gap-4 sm:gap-8">
               <div className="p-4 sm:p-8">
                 <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2 text-[#000]">
@@ -124,10 +267,17 @@ export function BentoGrid() {
                 className="w-full h-[300px] lg:h-[500px] rounded-b-3xl lg:rounded-l-none lg:rounded-r-3xl object-cover"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Card */}
-          <div className="bg-white rounded-3xl border border-neutral-200 h-auto">
+          <motion.div
+            variants={cardVariants}
+            initial="initial"
+            whileInView="animate"
+            whileHover="hover"
+            whileTap="tap"
+            className="bg-white rounded-3xl border border-neutral-200 h-auto cursor-pointer"
+          >
             <div className="flex flex-col gap-4 sm:gap-8">
               <Image
                 src="/images/bento/eye-care-anywhere.png"
@@ -153,9 +303,9 @@ export function BentoGrid() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 }

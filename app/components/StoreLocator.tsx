@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MapPin, Phone, Search } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const STORES = [
   {
@@ -267,6 +268,39 @@ interface StoreLocatorProps {
   featured?: boolean;
 }
 
+// Add these animation variants before the StoreLocator component
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const storeCardVariants = {
+  hidden: { 
+    opacity: 0,
+    y: 20
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5
+    }
+  }
+};
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1,
+    transition: { duration: 0.6 }
+  }
+};
+
 export function StoreLocator({ featured = false }: StoreLocatorProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedState, setSelectedState] = useState<string>("");
@@ -299,20 +333,31 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
   const storesToDisplay = featured ? featuredStores : filteredStores;
 
   return (
-    <section className="py-20 bg-white">
+    <motion.section 
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
+      className="py-20 bg-white"
+    >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 rounded-lg">
-        <div className="mx-auto max-w-2xl text-center mb-12 rounded-lg">
+        <motion.div 
+          variants={fadeIn}
+          className="mx-auto max-w-2xl text-center mb-12 rounded-lg"
+        >
           <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display">
             {featured ? "Our Stores" : "Find a Store Near You"}
           </h2>
           <p className="text-lg text-neutral-600 rounded-lg">
             Locate your nearest ClearVue store for expert eye care services
           </p>
-        </div>
+        </motion.div>
 
         {/* Only show search and filters on the full stores page */}
         {!featured && (
-          <div className="mb-8 space-y-4 rounded-lg">
+          <motion.div 
+            variants={fadeIn}
+            className="mb-8 space-y-4 rounded-lg"
+          >
             <div className="flex flex-col sm:flex-row gap-4 rounded-lg">
               {/* Search Input */}
               <div className="relative flex-1 rounded-lg">
@@ -355,7 +400,7 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
                 ))}
               </select>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {!featured && (
@@ -364,10 +409,17 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
           </p>
         )}
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 rounded-lg">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 rounded-lg"
+        >
           {storesToDisplay.map((store) => (
-            <div
+            <motion.div
               key={store.id}
+              variants={storeCardVariants}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
               className="group bg-white overflow-hidden border border-neutral-200 hover:shadow-xl transition-all duration-300 flex flex-col h-auto rounded-2xl"
             >
               {/* Store Image */}
@@ -393,8 +445,8 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
                 <span
                   className={`absolute top-4 right-4 inline-flex items-center px-2.5 py-0.5 text-xs font-medium ${
                     store.status === "Active"
-                      ? " text-white  bg-emerald-700"
-                      : " text-white bg-amber-700"
+                      ? "bg-emerald-600 text-white"
+                      : "bg-amber-600 text-white"
                   } rounded-full`}
                 >
                   {store.status}
@@ -461,30 +513,42 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {featured && (
-          <div className="mt-8 text-center">
-            <a
+          <motion.div 
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+            className="mt-8 text-center"
+          >
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               href="/stores"
               className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-pink-600 hover:bg-pink-700 font-sans"
             >
               View All Stores
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         )}
 
-        {/* No Results Message */}
+        {/* No Results Message with animation */}
         {!featured && filteredStores.length === 0 && (
-          <div className="text-center py-12 rounded-lg">
+          <motion.div 
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+            className="text-center py-12 rounded-lg"
+          >
             <p className="text-neutral-600 rounded-lg">
               No stores found matching your search criteria.
             </p>
-          </div>
+          </motion.div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 }

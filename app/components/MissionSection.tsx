@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 function AnimatedCounter({ value }: { value: string }) {
   const [displayValue, setDisplayValue] = useState("0");
@@ -65,7 +66,13 @@ export function MissionSection() {
   return (
     <section className="py-24 bg-neutral-50">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
-        <div className="mx-auto text-center mb-20">
+        <motion.div
+          className="mx-auto text-center mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8 }}
+        >
           <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-black font-display">
             Our Mission
           </h2>
@@ -78,16 +85,20 @@ export function MissionSection() {
             service.
             <br />
             <br />
-            We’re committed to building trust with every purchase by ensuring
-            world-class quality, thoughtful care, and style that lasts.
+            We&apos;re committed to building trust with every purchase by
+            ensuring world-class quality, thoughtful care, and style that lasts.
           </p>
-        </div>
+        </motion.div>
 
         {/* Stats Grid */}
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2">
-          {stats.map((item) => (
-            <div
+          {stats.map((item, index) => (
+            <motion.div
               key={item.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
               className="relative overflow-hidden flex flex-col items-center text-center rounded-2xl bg-white p-10 shadow-lg transition-all duration-300 hover:shadow-xl border border-neutral-100 hover:border-neutral-200 group"
             >
               <div className="absolute w-40 h-40 bg-neutral-50 rounded-full -top-20 -right-20 opacity-70 group-hover:scale-110 transition-transform duration-500"></div>
@@ -103,7 +114,7 @@ export function MissionSection() {
                   {item.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export function Footer() {
   const handleScroll = (
@@ -20,6 +21,17 @@ export function Footer() {
     }
   };
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.5 },
+  };
+
+  const linkHover = {
+    hover: { x: 5, transition: { duration: 0.2 } },
+  };
+
   return (
     <footer
       className="bg-cover bg-center text-white relative overflow-hidden"
@@ -35,7 +47,11 @@ export function Footer() {
       <div className="mx-auto max-w-[1400px] px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
-          <div className="space-y-4">
+          <motion.div
+            className="space-y-4"
+            {...fadeInUp}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             <Image
               src="/images/logomark.png"
               alt="ClearVue"
@@ -46,88 +62,99 @@ export function Footer() {
               Premium eyewear for those who appreciate quality, style, and
               exceptional vision care.
             </p>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div>
+          <motion.div {...fadeInUp} transition={{ duration: 0.5, delay: 0.2 }}>
             <h4 className="font-medium mb-4">Quick Links</h4>
             <ul className="space-y-3 text-white">
-              <li>
+              <motion.li variants={linkHover} whileHover="hover">
                 <a
                   href="#about"
                   onClick={(e) => handleScroll(e, "#about")}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors inline-block"
                 >
                   About Us
                 </a>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={linkHover} whileHover="hover">
                 <a
                   href="#store-locator"
                   onClick={(e) => handleScroll(e, "#store-locator")}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors inline-block"
                 >
                   Store Locator
                 </a>
-              </li>
-              <li>
-                <Link
-                  href="/careers"
-                  className="hover:text-white transition-colors"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
+              </motion.li>
+
+              <motion.li variants={linkHover} whileHover="hover">
                 <a
                   href="#contact"
                   onClick={(e) => handleScroll(e, "#contact")}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors inline-block"
                 >
                   Contact Us
                 </a>
-              </li>
+              </motion.li>
+              <motion.li variants={linkHover} whileHover="hover">
+                <Link
+                  href="/careers"
+                  className="hover:text-white transition-colors inline-block"
+                >
+                  Careers
+                </Link>
+              </motion.li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact Info */}
-          <div>
+          <motion.div {...fadeInUp} transition={{ duration: 0.5, delay: 0.3 }}>
             <h4 className="font-medium mb-4">Contact</h4>
             <ul className="space-y-3 text-white">
-              <li>
+              <motion.li variants={linkHover} whileHover="hover">
                 <a
                   href="tel:+918383954955"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors inline-block"
                 >
                   +91 83839 54955
                 </a>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={linkHover} whileHover="hover">
                 <a
                   href="mailto:support@clearvue.co.in"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors inline-block"
                 >
                   support@clearvue.co.in
                 </a>
-              </li>
-              <li className="max-w-xs">
+              </motion.li>
+              <motion.li
+                variants={linkHover}
+                whileHover="hover"
+                className="max-w-xs"
+              >
                 52/A, Chanakya Tower, Rajpur Road, Vishal Mega Mart, Chironwali,
                 Dehradun, Uttarakhand, 248001
-              </li>
+              </motion.li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Business Hours */}
-          <div>
+          <motion.div {...fadeInUp} transition={{ duration: 0.5, delay: 0.4 }}>
             <h4 className="font-medium mb-4">Business Hours</h4>
             <ul className="space-y-3 text-white">
               <span className="font-bold">Sun-Sat: </span>10:00 A.M to 9:00 PM
             </ul>
-          </div>
+          </motion.div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/40 mt-12 pt-8">
+        <motion.div
+          className="border-t border-white/40 mt-12 pt-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-white text-sm">
               © {new Date().getFullYear()} ClearVue. All rights reserved by{" "}
@@ -136,19 +163,19 @@ export function Footer() {
             <div className="flex gap-6 text-sm">
               <Link
                 href="/privacy"
-                className="text-white hover:text-white transition-colors"
+                className="text-white hover:text-white transition-colors z-10"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-white hover:text-white transition-colors"
+                className="text-white hover:text-white transition-colors z-10"
               >
                 Terms of Service
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

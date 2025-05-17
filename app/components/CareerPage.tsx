@@ -3,7 +3,16 @@
 import { useState } from "react";
 import { submitJobApplication } from "../actions/careers";
 import { useToast } from "../hooks/useToast";
-import { Briefcase, MapPin, Clock, Send, CheckCircle, Eye, Wrench } from "lucide-react";
+import {
+  Briefcase,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle,
+  Eye,
+  Wrench,
+} from "lucide-react";
+import { motion } from "framer-motion";
 
 interface JobListing {
   title: string;
@@ -39,6 +48,20 @@ const jobListings: JobListing[] = [
       "Work with cutting-edge equipment to process, cut, and fit lenses according to prescriptions while maintaining high quality standards.",
   },
 ];
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 },
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 export default function CareerPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -89,22 +112,33 @@ export default function CareerPage() {
       {/* Hero Section */}
       <div className="relative pt-36 pb-16 bg-gradient-to-b from-neutral-50 to-white">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h1 className="font-display text-4xl sm:text-5xl mb-6 text-neutral-900 tracking-tight">
+          <motion.div
+            className="mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="font-display text-4xl sm:text-5xl mb-6 text-neutral-900 tracking-tight text-center">
               Join Our Vision for Excellence
             </h1>
-            <p className="text-xl text-neutral-600 mb-8 font-sans font-medium">
+            <p className="text-xl text-neutral-600 mb-8 font-sans font-medium text-center">
               Build your career with ClearVue and be part of a team that&apos;s
               revolutionizing the eyewear industry.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Current Openings Section */}
-      <div className="py-16 bg-white">
+      <div className="pb-16 bg-white">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="font-display text-3xl sm:text-4xl mb-4 text-neutral-900 tracking-tight">
               Current Openings
             </h2>
@@ -112,23 +146,29 @@ export default function CareerPage() {
               Explore our available positions and find the perfect fit for your
               skills and career goals.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {jobListings.map((job, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={fadeInUp}
                 className={`p-6 border rounded-xl transition-all duration-300 cursor-pointer ${
                   selectedJob === job.title
                     ? "border-pink-500 shadow-md bg-pink-50"
                     : "border-neutral-200 hover:border-pink-300 hover:shadow-sm"
                 }`}
+                whileHover={{ scale: 1.02 }}
                 onClick={() => setSelectedJob(job.title)}
               >
                 <div className="flex justify-between items-start mb-4">
-                  <div className="p-2 bg-pink-100 rounded-lg">
-                    {job.icon}
-                  </div>
+                  <div className="p-2 bg-pink-100 rounded-lg">{job.icon}</div>
                   {selectedJob === job.title && (
                     <CheckCircle className="h-5 w-5 text-pink-600" />
                   )}
@@ -158,16 +198,22 @@ export default function CareerPage() {
                 >
                   Apply Now
                 </button>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Application Form Section */}
       <div id="application-form" className="py-24 bg-neutral-50">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="font-display text-3xl sm:text-4xl mb-4 text-neutral-900 tracking-tight">
               Apply Now
             </h2>
@@ -175,10 +221,14 @@ export default function CareerPage() {
               Fill in your details below and take the first step towards a
               clearer and brighter career with ClearVue.
             </p>
-          </div>
+          </motion.div>
 
-          <form
+          <motion.form
             className="space-y-6 bg-white p-8 rounded-xl shadow-sm"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             onSubmit={handleSubmit}
           >
             <div>
@@ -327,7 +377,7 @@ export default function CareerPage() {
                 {!isSubmitting && <Send className="ml-2 h-4 w-4" />}
               </button>
             </div>
-          </form>
+          </motion.form>
 
           <div className="mt-8 text-center text-sm text-neutral-600">
             <p>
@@ -341,7 +391,13 @@ export default function CareerPage() {
       {/* Values Section */}
       <div className="py-16 bg-white">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="font-display text-3xl sm:text-4xl mb-4 text-neutral-900 tracking-tight">
               Our Values
             </h2>
@@ -349,10 +405,20 @@ export default function CareerPage() {
               At ClearVue, we&apos;re guided by these core principles that shape
               our culture and drive our success.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-neutral-100">
+          <motion.div
+            className="grid md:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.div
+              variants={fadeInUp}
+              whileHover={{ scale: 1.05 }}
+              className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-neutral-100"
+            >
               <div className="p-3 bg-pink-50 rounded-full w-fit mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -377,8 +443,12 @@ export default function CareerPage() {
                 eyewear industry. Our commitment to innovation drives everything
                 we do.
               </p>
-            </div>
-            <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-neutral-100">
+            </motion.div>
+            <motion.div
+              variants={fadeInUp}
+              whileHover={{ scale: 1.05 }}
+              className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-neutral-100"
+            >
               <div className="p-3 bg-pink-50 rounded-full w-fit mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -402,8 +472,12 @@ export default function CareerPage() {
                 We invest in our team&apos;s development and provide
                 opportunities for advancement. Your success is our success.
               </p>
-            </div>
-            <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-neutral-100">
+            </motion.div>
+            <motion.div
+              variants={fadeInUp}
+              whileHover={{ scale: 1.05 }}
+              className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-neutral-100"
+            >
               <div className="p-3 bg-pink-50 rounded-full w-fit mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -427,95 +501,19 @@ export default function CareerPage() {
                 We strive for excellence in everything we do, from customer
                 service to technical expertise. Quality is never compromised.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Benefits Section - New Addition
-      <div className="py-16 bg-neutral-50">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl mb-4 text-neutral-900 tracking-tight">
-              Why Work With Us
-            </h2>
-            <p className="text-neutral-600 font-sans max-w-2xl mx-auto">
-              At ClearVue, we believe in taking care of our team. Here are some
-              of the benefits you&apos;ll enjoy.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-5 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <h3 className="font-display text-lg text-neutral-900 mb-2">
-                Competitive Salary
-              </h3>
-              <p className="text-neutral-600 text-sm">
-                We offer industry-competitive compensation packages.
-              </p>
-            </div>
-            <div className="p-5 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <h3 className="font-display text-lg text-neutral-900 mb-2">
-                Health Insurance
-              </h3>
-              <p className="text-neutral-600 text-sm">
-                Comprehensive health coverage for you and your family.
-              </p>
-            </div>
-            <div className="p-5 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <h3 className="font-display text-lg text-neutral-900 mb-2">
-                Professional Development
-              </h3>
-              <p className="text-neutral-600 text-sm">
-                Ongoing training and education opportunities.
-              </p>
-            </div>
-            <div className="p-5 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <h3 className="font-display text-lg text-neutral-900 mb-2">
-                Employee Discounts
-              </h3>
-              <p className="text-neutral-600 text-sm">
-                Special pricing on all ClearVue products.
-              </p>
-            </div>
-            <div className="p-5 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <h3 className="font-display text-lg text-neutral-900 mb-2">
-                Work-Life Balance
-              </h3>
-              <p className="text-neutral-600 text-sm">
-                Flexible scheduling options to fit your lifestyle.
-              </p>
-            </div>
-            <div className="p-5 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <h3 className="font-display text-lg text-neutral-900 mb-2">
-                Career Growth
-              </h3>
-              <p className="text-neutral-600 text-sm">
-                Clear pathways for advancement within the company.
-              </p>
-            </div>
-            <div className="p-5 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <h3 className="font-display text-lg text-neutral-900 mb-2">
-                Team Events
-              </h3>
-              <p className="text-neutral-600 text-sm">
-                Regular team-building activities and social events.
-              </p>
-            </div>
-            <div className="p-5 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <h3 className="font-display text-lg text-neutral-900 mb-2">
-                Retirement Plans
-              </h3>
-              <p className="text-neutral-600 text-sm">
-                Long-term financial security through retirement benefits.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* Contact Section */}
-      <div className="py-16 bg-white">
+      <motion.div
+        className="py-16 bg-white"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="mx-auto max-w-[1400px] px-6 lg:px-8 text-center">
           <h2 className="font-display text-2xl sm:text-3xl mb-4 text-neutral-900">
             Don&apos;t see the right position?
@@ -532,7 +530,7 @@ export default function CareerPage() {
             <Send className="ml-2 h-4 w-4" />
           </a>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

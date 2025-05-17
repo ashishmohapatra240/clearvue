@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 // import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function AboutSection() {
   return (
@@ -7,7 +9,13 @@ export function AboutSection() {
       <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Left Image */}
-          <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
             <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl">
               <Image
                 src="/images/stores/Ballupur.png"
@@ -16,28 +24,58 @@ export function AboutSection() {
                 className="object-cover"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Content */}
-          <div className="flex flex-col">
-            <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col"
+          >
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display"
+            >
               Crafting excellence since 2023
-            </h2>
+            </motion.h2>
 
-            <p className="text-neutral-900 text-lg mb-2 font-sans font-medium">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-neutral-900 text-lg mb-2 font-sans font-medium"
+            >
               ClearVue was founded with one mission: to make premium-quality
               eyewear truly accessible. Backed by decades of experience in
               modern retail, our founders saw the gap and stepped in to bridge
               it.
-            </p>
-            <p className="text-neutral-900 text-lg mb-2 font-sans font-bold">
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-neutral-900 text-lg mb-2 font-sans font-bold"
+            >
               What drives us?
-            </p>
-            <p className="text-neutral-900 text-lg mb-2 font-sans font-medium">
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-neutral-900 text-lg mb-2 font-sans font-medium"
+            >
               A passion for quality. A promise of affordability. And a
               commitment to trust and transparency—with our customers, team, and
               partners alike.
-            </p>
+            </motion.p>
 
             {/* Feature List
             <div className="space-y-4">
@@ -62,7 +100,7 @@ export function AboutSection() {
                 </p>
               </div>
             </div> */}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
