@@ -63,14 +63,14 @@ export function MissionSection() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-neutral-50">
+    <section className="py-24 bg-neutral-50">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
         <div className="mx-auto text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display">
+          <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-black font-display">
             Our Mission
           </h2>
 
-          <p className="text-neutral-600 leading-relaxed text-lg md:text-xl font-sans font-normal mx-auto">
+          <p className="text-black leading-relaxed text-lg md:text-xl font-sans font-normal mx-auto">
             At ClearVue, our mission is to deliver unmatched customer
             satisfaction at every touchpoint — from in-store experiences and
             expert eye checkups to tailored product recommendations,
@@ -93,7 +93,7 @@ export function MissionSection() {
               <div className="absolute w-40 h-40 bg-neutral-50 rounded-full -top-20 -right-20 opacity-70 group-hover:scale-110 transition-transform duration-500"></div>
 
               <div className="relative">
-                <div className="font-semibold text-6xl sm:text-7xl text-neutral-800 font-display">
+                <div className="font-semibold text-6xl sm:text-7xl bg-gradient-to-r from-[#E52D93] to-[#048AA9] bg-clip-text text-transparent font-display">
                   <AnimatedCounter value={item.number} />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-neutral-800">
