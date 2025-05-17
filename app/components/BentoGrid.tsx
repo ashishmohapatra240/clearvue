@@ -36,7 +36,7 @@ export function BentoGrid() {
                   className="w-full sm:w-auto rounded-t-3xl sm:rounded-l-3xl sm:rounded-tr-none"
                 />
                 <div className="p-4 sm:py-8 sm:px-2">
-                  <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2">
+                  <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2 text-[#000]">
                     Expert Eyes
                     <br />
                     On You
@@ -54,7 +54,7 @@ export function BentoGrid() {
             <div className="bg-white rounded-3xl border border-neutral-200 relative">
               <div className="flex flex-col-reverse sm:flex-row items-start gap-4 sm:gap-8">
                 <div className="p-4 sm:p-8">
-                  <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2">
+                  <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2 text-[#000]">
                     We don&apos;t
                     <br />
                     do average.
@@ -88,7 +88,7 @@ export function BentoGrid() {
               className="text-blue-500 sm:w-[120px]"
             />
             <div>
-              <h3 className="text-3xl sm:text-5xl font-display font-semibold mb-2 sm:mb-4 text-center">
+              <h3 className="text-3xl sm:text-5xl font-display font-semibold mb-2 sm:mb-4 text-center text-[#000]">
                 Your Glasses, Ready in{" "}
                 <span className="bg-gradient-to-r from-[#E52D93] to-[#00CFFF] bg-clip-text text-transparent">
                   4 Hours
@@ -108,7 +108,7 @@ export function BentoGrid() {
           <div className="bg-white rounded-3xl border border-neutral-200 h-auto">
             <div className="flex flex-col lg:flex-row items-start gap-4 sm:gap-8">
               <div className="p-4 sm:p-8">
-                <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2">
+                <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2 text-[#000]">
                   Frame Selection
                 </h3>
                 <p className="text-neutral-600 text-sm sm:text-md">
@@ -137,7 +137,7 @@ export function BentoGrid() {
                 className="rounded-t-3xl w-full h-[200px] sm:h-[300px] object-cover"
               />
               <div className="flex flex-col px-4 pb-6 sm:pb-10">
-                <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2 flex items-center gap-2">
+                <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2 flex items-center gap-2 text-[#000]">
                   Eye Care Anywhere
                   <Image
                     src="/images/bento/plus.png"
