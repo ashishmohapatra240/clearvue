@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 // import { Quote } from "lucide-react";
 
 const testimonials = [
@@ -29,8 +30,8 @@ const testimonials = [
     text: (
       <>
         Loved the service and the glasses! When I went for the test, I realised
-        my last eye test was inaccurate, and ClearVue’s Optometrists helped me
-        get my power checked accurately.
+        my last eye test was inaccurate, and ClearVue&apos;s Optometrists helped
+        me get my power checked accurately.
       </>
     ),
     author: "Ayushi Rath",
@@ -50,9 +51,9 @@ const testimonials = [
   {
     text: (
       <>
-        Needed some new looks with my eyewear, but I wasn’t confident. One visit
-        to ClearVue, and found my new pair of stylish frames at the price of
-        one! Great Experience! Recommended.
+        Needed some new looks with my eyewear, but I wasn&apos;t confident. One
+        visit to ClearVue, and found my new pair of stylish frames at the price
+        of one! Great Experience! Recommended.
       </>
     ),
     author: "Sailesh Mohanty",
@@ -61,10 +62,11 @@ const testimonials = [
   {
     text: (
       <>
-        I didn’t even know that I had power in my eyes, and only went in for the
-        Free Eye checkup. But to my surprise, I found out that I had power and
-        what I was seeing by then, wasn’t the actual clarity. Got my first pair
-        of glasses at a very affordable price. Great Frames. Love it!
+        I didn&apos;t even know that I had power in my eyes, and only went in
+        for the Free Eye checkup. But to my surprise, I found out that I had
+        power and what I was seeing by then, wasn&apos;t the actual clarity. Got
+        my first pair of glasses at a very affordable price. Great Frames. Love
+        it!
       </>
     ),
     author: "Debjani Jha",
@@ -76,53 +78,54 @@ const testimonials = [
 export function TestimonialsSection() {
   return (
     <section className="relative isolate overflow-hidden bg-white py-24">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 t"></div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-40"></div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40"></div>
 
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-8 py-10">
         <header className="mb-16 text-center">
           <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display">
             Our trusted customers
           </h2>
         </header>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <Marquee
+          gradient={false}
+          speed={40}
+          pauseOnHover={true}
+          className="overflow-x-hidden"
+        >
           {testimonials.map((t, i) => (
             <article
               key={i}
-              className="relative flex h-full flex-col rounded-4xl bg-white p-8 shadow-[0_4px_12px_rgba(0,0,0,0.04)] ring-1 ring-slate-100 hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] transition-shadow"
+              className="relative flex h-[320px] flex-col rounded-3xl bg-white p-8 shadow-md ring-1 ring-slate-100 mx-4 w-[400px] my-4"
             >
-              <div className="grow">
-                {/* <Quote
-                  size={32}
-                  strokeWidth={2}
-                  className="text-slate-300"
-                  aria-hidden
-                /> */}
-                <p className="mt-4 text-sm leading-relaxed text-slate-700 font-sans">
+              <div className="flex-1">
+                <p className="mt-4 text-md leading-relaxed text-slate-700 font-sans">
                   {t.text}
                 </p>
               </div>
 
-              <hr className="my-6 border-slate-100" />
+              <div>
+                <hr className="my-4 border-slate-100" />
 
-              <footer className="flex items-center gap-3">
-                <Image
-                  src={t.image}
-                  width={40}
-                  height={40}
-                  alt={t.author}
-                  className="h-10 w-10 rounded-full object-cover"
-                />
-                <div>
-                  <p className="font-medium text-slate-900 font-sans">
-                    {t.author}
-                  </p>
-                </div>
-              </footer>
+                <footer className="flex items-center gap-3">
+                  <Image
+                    src={t.image}
+                    width={40}
+                    height={40}
+                    alt={t.author}
+                    className="h-10 w-10 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="font-medium text-slate-900 font-sans">
+                      {t.author}
+                    </p>
+                  </div>
+                </footer>
+              </div>
             </article>
           ))}
-        </div>
+        </Marquee>
       </div>
     </section>
   );
