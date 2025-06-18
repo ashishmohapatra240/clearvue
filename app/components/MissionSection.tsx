@@ -64,20 +64,20 @@ export function MissionSection() {
   ];
 
   return (
-    <section className="py-24 bg-neutral-50">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-neutral-50">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="mx-auto text-center mb-20"
+          className="mx-auto text-center mb-12 sm:mb-16 md:mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-black font-display">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 md:mb-8 text-black font-display">
             Our Mission
           </h2>
 
-          <p className="text-black leading-relaxed text-lg md:text-xl font-sans font-normal mx-auto">
+          <p className="text-black leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl font-sans font-normal mx-auto max-w-4xl px-2">
             At ClearVue, our mission is to deliver unmatched customer
             satisfaction at every touchpoint — from in-store experiences and
             expert eye checkups to tailored product recommendations,
@@ -91,7 +91,7 @@ export function MissionSection() {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2">
           {stats.map((item, index) => (
             <motion.div
               key={item.title}
@@ -99,18 +99,18 @@ export function MissionSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="relative overflow-hidden flex flex-col items-center text-center rounded-2xl bg-white p-10 shadow-lg transition-all duration-300 hover:shadow-xl border border-neutral-100 hover:border-neutral-200 group"
+              className="relative overflow-hidden flex flex-col items-center text-center rounded-2xl bg-white p-6 sm:p-8 md:p-10 shadow-lg transition-all duration-300 hover:shadow-xl border border-neutral-100 hover:border-neutral-200 group"
             >
-              <div className="absolute w-40 h-40 bg-neutral-50 rounded-full -top-20 -right-20 opacity-70 group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="absolute w-32 h-32 sm:w-40 sm:h-40 bg-neutral-50 rounded-full -top-16 -right-16 sm:-top-20 sm:-right-20 opacity-70 group-hover:scale-110 transition-transform duration-500"></div>
 
               <div className="relative">
-                <div className="font-semibold text-6xl sm:text-7xl bg-gradient-to-r from-[#E52D93] to-[#048AA9] bg-clip-text text-transparent font-display">
+                <div className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-[#E52D93] to-[#048AA9] bg-clip-text text-transparent font-display">
                   <AnimatedCounter value={item.number} />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-neutral-800">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-neutral-800">
                   {item.title}
                 </h3>
-                <p className="text-neutral-600 text-base font-normal max-w-xs mx-auto">
+                <p className="text-neutral-600 text-sm sm:text-base font-normal max-w-xs mx-auto">
                   {item.description}
                 </p>
               </div>

@@ -95,7 +95,7 @@ export function BentoGrid() {
             whileInView="animate"
             whileHover="hover"
             whileTap="tap"
-            className="relative rounded-3xl overflow-hidden aspect-square lg:aspect-auto cursor-pointer"
+            className="relative rounded-3xl overflow-hidden aspect-square lg:aspect-auto"
           >
             <motion.div
               variants={imageHover}
@@ -113,11 +113,18 @@ export function BentoGrid() {
             </motion.div>
             <motion.div
               variants={textReveal}
-              className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8"
+              className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8"
             >
               <h2 className="text-2xl sm:text-4xl font-display text-white font-semibold">
-                Style Meets Clarity
+                Style Meets Quality
               </h2>
+              <p className="text-white text-sm sm:text-md">
+                Contemporary Fashion and Style for your wardrobe. Our team
+                researches on the design direction in upcoming eyewear trends
+                and brings them to you before any other brand does. As a result,
+                you get the latest shapes, colors, skin friendly materials,
+                designs and technology in eyewear.
+              </p>
             </motion.div>
           </motion.div>
 
@@ -162,7 +169,7 @@ export function BentoGrid() {
               whileInView="animate"
               whileHover="hover"
               whileTap="tap"
-              className="bg-white rounded-3xl border border-neutral-200 relative cursor-pointer"
+              className="bg-white rounded-3xl border border-neutral-200 relative"
             >
               <div className="flex flex-col-reverse sm:flex-row items-start gap-4 sm:gap-8">
                 <div className="p-4 sm:p-8">
@@ -196,22 +203,13 @@ export function BentoGrid() {
           whileInView="animate"
           whileHover="hover"
           whileTap="tap"
-          className="bg-white rounded-3xl border border-neutral-200 cursor-pointer"
+          className="bg-white rounded-3xl border border-neutral-200"
         >
           <motion.div
             className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 p-6 sm:p-16 justify-center"
             variants={textReveal}
           >
-            <motion.div
-              animate={{
-                rotate: [0, 360],
-                transition: {
-                  duration: 20,
-                  ease: "linear",
-                  repeat: Infinity,
-                },
-              }}
-            >
+            <div className="flex justify-center">
               <Image
                 src="/images/bento/infinity.png"
                 alt="Infinity symbol"
@@ -219,7 +217,7 @@ export function BentoGrid() {
                 height={40}
                 className="text-blue-500 sm:w-[120px]"
               />
-            </motion.div>
+            </div>
             <div>
               <h3 className="text-3xl sm:text-5xl font-display font-semibold mb-2 sm:mb-4 text-center text-[#000]">
                 Your Glasses, Ready in{" "}
@@ -247,7 +245,7 @@ export function BentoGrid() {
             whileInView="animate"
             whileHover="hover"
             whileTap="tap"
-            className="bg-white rounded-3xl border border-neutral-200 h-auto cursor-pointer"
+            className="bg-white rounded-3xl border border-neutral-200 h-auto"
           >
             <div className="flex flex-col lg:flex-row items-start gap-4 sm:gap-8">
               <div className="p-4 sm:p-8">
@@ -276,7 +274,7 @@ export function BentoGrid() {
             whileInView="animate"
             whileHover="hover"
             whileTap="tap"
-            className="bg-white rounded-3xl border border-neutral-200 h-auto cursor-pointer"
+            className="bg-white rounded-3xl border border-neutral-200 h-auto"
           >
             <div className="flex flex-col gap-4 sm:gap-8">
               <Image

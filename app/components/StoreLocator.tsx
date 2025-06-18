@@ -10,7 +10,7 @@ const STORES = [
     id: 1,
     name: "ClearVue",
     address:
-      "Shop No. 52, 4 Raipur Road, Near Vishal Mega Mart, Kandholi, Dharampur",
+      "Shop No. 52, 4 Rajpur Road, Near Vishal Mega Mart, Kandholi, Dharampur",
     city: "Dehradun",
     state: "Uttarakhand",
     pincode: "248001",
@@ -19,7 +19,7 @@ const STORES = [
     status: "Active",
     shortAddress: "",
     featured: false,
-    image: "/images/stores/Dharampur.png",
+    image: "/images/stores/dharampur.jpg",
   },
   {
     id: 2,
@@ -253,6 +253,35 @@ const STORES = [
     featured: true,
     image: "/images/stores/nit-1.jpg",
   },
+  {
+    id: 18,
+    name: "ClearVue",
+    address: "Shop No. 33-C, Gurudwara Road, Bhai Randhir Singh Nagar",
+    city: "Ludhiana",
+    state: "Punjab",
+    pincode: "141012",
+    phone: "",
+    openingDate: "",
+    status: "Opening soon",
+    shortAddress: "BRS Nagar",
+    featured: false,
+    image: "/images/stores/brs-nagar.jpg",
+  },
+  {
+    id: 19,
+    name: "ClearVue",
+    address:
+      "15, Ajay Society, Opp. Hanuman ji Temple, Deluxe Crossroads, Nizampura Main Road",
+    city: "Vadodara",
+    state: "Gujarat",
+    pincode: "390002",
+    phone: "",
+    openingDate: "",
+    status: "Opening soon",
+    shortAddress: "Nizampura",
+    featured: false,
+    image: "/images/stores/nizampura.jpg",
+  },
 ] as const;
 
 const generateRandomPhone = () => {
@@ -274,31 +303,31 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1
-    }
-  }
+      staggerChildren: 0.1,
+    },
+  },
 };
 
 const storeCardVariants = {
-  hidden: { 
+  hidden: {
     opacity: 0,
-    y: 20
+    y: 20,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5
-    }
-  }
+      duration: 0.5,
+    },
+  },
 };
 
 const fadeIn = {
   hidden: { opacity: 0 },
-  visible: { 
+  visible: {
     opacity: 1,
-    transition: { duration: 0.6 }
-  }
+    transition: { duration: 0.6 },
+  },
 };
 
 export function StoreLocator({ featured = false }: StoreLocatorProps) {
@@ -333,14 +362,14 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
   const storesToDisplay = featured ? featuredStores : filteredStores;
 
   return (
-    <motion.section 
+    <motion.section
       initial="hidden"
       animate="visible"
       variants={fadeIn}
       className="py-20 bg-white"
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 rounded-lg">
-        <motion.div 
+        <motion.div
           variants={fadeIn}
           className="mx-auto max-w-2xl text-center mb-12 rounded-lg"
         >
@@ -354,10 +383,7 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
 
         {/* Only show search and filters on the full stores page */}
         {!featured && (
-          <motion.div 
-            variants={fadeIn}
-            className="mb-8 space-y-4 rounded-lg"
-          >
+          <motion.div variants={fadeIn} className="mb-8 space-y-4 rounded-lg">
             <div className="flex flex-col sm:flex-row gap-4 rounded-lg">
               {/* Search Input */}
               <div className="relative flex-1 rounded-lg">
@@ -409,7 +435,7 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
           </p>
         )}
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -428,7 +454,7 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
                   src={store.image}
                   alt={`ClearVue store at ${store.city}`}
                   fill
-                  className="object-cover transition-all duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                  className="object-cover transition-all duration-300 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 {/* Add gradient overlay */}
@@ -518,7 +544,7 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
         </motion.div>
 
         {featured && (
-          <motion.div 
+          <motion.div
             variants={fadeIn}
             initial="hidden"
             animate="visible"
@@ -537,7 +563,7 @@ export function StoreLocator({ featured = false }: StoreLocatorProps) {
 
         {/* No Results Message with animation */}
         {!featured && filteredStores.length === 0 && (
-          <motion.div 
+          <motion.div
             variants={fadeIn}
             initial="hidden"
             animate="visible"

@@ -55,7 +55,7 @@ export function Navbar() {
                   alt="logo"
                   width={200}
                   height={200}
-                  className="w-20 sm:w-24 md:w-32 lg:w-40 xl:w-48 object-cover"
+                  className="w-36 lg:w-40 xl:w-48 object-cover"
                 />
               </Link>
             </motion.div>

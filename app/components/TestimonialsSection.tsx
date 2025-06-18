@@ -78,19 +78,19 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-white py-24">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-40"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40"></div>
+    <section className="relative isolate overflow-hidden bg-white py-12 sm:py-16 lg:py-24">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-20 sm:h-32 lg:h-40"></div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 sm:h-32 lg:h-40"></div>
 
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-8 py-10">
-        <motion.header 
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+        <motion.header
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-16 text-center"
+          className="mb-8 sm:mb-12 lg:mb-16 text-center"
         >
-          <h2 className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-4 sm:mb-6 lg:mb-8 text-neutral-900 font-display">
             Our trusted customers
           </h2>
         </motion.header>
@@ -98,7 +98,7 @@ export function TestimonialsSection() {
         <Marquee
           gradient={false}
           speed={40}
-          pauseOnHover={true}
+          pauseOnHover={false}
           className="overflow-x-hidden"
         >
           {testimonials.map((t, i) => (
@@ -106,27 +106,27 @@ export function TestimonialsSection() {
               key={i}
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="relative flex h-[320px] flex-col rounded-3xl bg-white p-8 shadow-md ring-1 ring-slate-100 mx-4 w-[400px] my-4"
+              className="relative flex h-[280px] sm:h-[300px] lg:h-[320px] flex-col rounded-2xl sm:rounded-3xl bg-white p-4 sm:p-6 lg:p-8 shadow-md ring-1 ring-slate-100 mx-2 sm:mx-3 lg:mx-4 w-[280px] sm:w-[320px] lg:w-[380px] xl:w-[400px] my-2 sm:my-3 lg:my-4"
             >
               <div className="flex-1">
-                <p className="mt-4 text-md leading-relaxed text-slate-700 font-sans">
+                <p className="mt-2 sm:mt-3 lg:mt-4 text-sm sm:text-base lg:text-md leading-relaxed text-slate-700 font-sans">
                   {t.text}
                 </p>
               </div>
 
               <div>
-                <hr className="my-4 border-slate-100" />
+                <hr className="my-3 sm:my-4 border-slate-100" />
 
-                <footer className="flex items-center gap-3">
+                <footer className="flex items-center gap-2 sm:gap-3">
                   <Image
                     src={t.image}
                     width={40}
                     height={40}
                     alt={t.author}
-                    className="h-10 w-10 rounded-full object-cover"
+                    className="h-8 w-8 sm:h-10 sm:w-10 rounded-full object-cover"
                   />
                   <div>
-                    <p className="font-medium text-slate-900 font-sans">
+                    <p className="font-medium text-sm sm:text-base text-slate-900 font-sans">
                       {t.author}
                     </p>
                   </div>
