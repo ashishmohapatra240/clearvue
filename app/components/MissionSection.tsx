@@ -73,7 +73,7 @@ export function MissionSection() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 md:mb-8 text-black font-display">
+          <h2 className="text-4xl sm:text-5xl font-semibold text-neutral-900 font-display mb-4 sm:mb-6 md:mb-8">
             Our Mission
           </h2>
 
@@ -99,18 +99,18 @@ export function MissionSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="relative overflow-hidden flex flex-col items-center text-center rounded-2xl bg-white p-6 sm:p-8 md:p-10 shadow-lg transition-all duration-300 hover:shadow-xl border border-neutral-100 hover:border-neutral-200 group"
+              className="relative overflow-hidden flex flex-col items-center text-center rounded-2xl bg-gradient-to-br from-pink-600 to-[#610755] p-6 sm:p-8 md:p-10 shadow-md transition-all duration-300 hover:shadow-lg border border-transparent group"
             >
-              <div className="absolute w-32 h-32 sm:w-40 sm:h-40 bg-neutral-50 rounded-full -top-16 -right-16 sm:-top-20 sm:-right-20 opacity-70 group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="absolute w-24 h-24 sm:w-32 sm:h-32 bg-white/5 rounded-full -top-10 -right-10 sm:-top-16 sm:-right-16 opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
 
               <div className="relative">
-                <div className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-[#E52D93] to-[#048AA9] bg-clip-text text-transparent font-display">
+                <div className="font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-display">
                   <AnimatedCounter value={item.number} />
                 </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-neutral-800">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 text-white">
                   {item.title}
                 </h3>
-                <p className="text-neutral-600 text-sm sm:text-base font-normal max-w-xs mx-auto">
+                <p className="text-white/90 text-sm sm:text-base font-normal max-w-xs mx-auto">
                   {item.description}
                 </p>
               </div>

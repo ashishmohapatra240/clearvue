@@ -1,14 +1,49 @@
 "use client";
 import Image from "next/image";
 // import { Check } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const STORE_IMAGES = [
+  "/images/stores/Ballupur.png",
+  "/images/stores/bhatinda.jpg",
+  "/images/stores/brs-nagar.jpg",
+  "/images/stores/civil-line-ludhiana.jpg",
+  "/images/stores/dharampur.jpg",
+  "/images/stores/Dharampur.png",
+  "/images/stores/Gurgaon.png",
+  "/images/stores/high-street-apollo.jpg",
+  "/images/stores/id-market.jpg",
+  "/images/stores/infocity.jpg",
+  "/images/stores/jalgaon.jpg",
+  "/images/stores/kishan-nagar.jpg",
+  "/images/stores/moga.jpg",
+  "/images/stores/nehru-colony.jpg",
+  "/images/stores/nit-1.jpg",
+  "/images/stores/nit-5.jpg",
+  "/images/stores/nizampura.jpg",
+  "/images/stores/phagwara.jpg",
+  "/images/stores/qutub-plaza.jpg",
+  "/images/stores/rajpur-road-dehradun.jpg",
+  "/images/stores/Rajpur.png",
+  "/images/stores/sector-10-faridabad.jpg",
+];
 
 export function AboutSection() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % STORE_IMAGES.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 md:py-24 bg-neutral-50">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          {/* Left Image */}
+          {/* Left Image (Slideshow) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -17,12 +52,24 @@ export function AboutSection() {
             className="relative"
           >
             <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl">
-              <Image
-                src="/images/stores/Ballupur.png"
-                alt="ClearVue store interior"
-                fill
-                className="object-cover"
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={STORE_IMAGES[current]}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 40 }}
+                  transition={{ duration: 0.6 }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={STORE_IMAGES[current]}
+                    alt="ClearVue store interior"
+                    fill
+                    className="object-cover rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
+                    priority
+                  />
+                </motion.div>
+              </AnimatePresence>
             </div>
           </motion.div>
 
@@ -41,7 +88,7 @@ export function AboutSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl sm:text-5xl font-semibold mb-8 text-neutral-900 font-display"
             >
-              Crafting excellence since 2023
+              Crafting Excellence Pan India
             </motion.h2>
 
             <motion.p
@@ -49,7 +96,7 @@ export function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-neutral-900 text-lg mb-2 font-sans font-medium"
+              className="text-neutral-900 leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl font-sans font-normal mb-2"
             >
               ClearVue was founded with one mission: to make premium-quality
               eyewear truly accessible. Backed by decades of experience in
@@ -61,7 +108,7 @@ export function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-neutral-900 text-lg mb-2 font-sans font-bold"
+              className="text-neutral-900 leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl font-sans font-bold mb-2"
             >
               What drives us?
             </motion.p>
@@ -70,7 +117,7 @@ export function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-neutral-900 text-lg mb-2 font-sans font-medium"
+              className="text-neutral-900 leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl font-sans font-normal mb-2"
             >
               A passion for quality. A promise of affordability. And a
               commitment to trust and transparency—with our customers, team, and

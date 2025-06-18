@@ -106,7 +106,7 @@ export function ContactSection() {
           {/* Contact Form */}
           <motion.div
             {...fadeInUp}
-            className="bg-white p-8 shadow-sm border border-neutral-200 rounded-xl"
+            className="bg-neutral-50 p-8 shadow-sm border border-neutral-200 rounded-xl"
           >
             <h3 className="text-2xl font-semibold mb-6 text-neutral-900 font-display">
               Send us a Message
@@ -192,7 +192,7 @@ export function ContactSection() {
             <motion.div
               {...fadeInUp}
               whileHover={contactCardHover.hover}
-              className="bg-white p-8 shadow-sm border border-neutral-200 mb-8 rounded-xl"
+              className="bg-neutral-50 p-8 shadow-sm border border-neutral-200 mb-8 rounded-xl"
             >
               <h3 className="text-2xl font-semibold mb-8 text-neutral-900 font-display">
                 Other Ways to Reach Us
@@ -274,7 +274,7 @@ export function ContactSection() {
             <motion.div
               {...fadeInUp}
               whileHover={contactCardHover.hover}
-              className="bg-white p-8 shadow-sm border border-neutral-200 rounded-xl"
+              className="bg-neutral-50 p-8 shadow-sm border border-neutral-200 rounded-xl"
             >
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-pink-50 rounded-xl">

@@ -137,9 +137,15 @@ export function BentoGrid() {
               whileInView="animate"
               whileHover="hover"
               whileTap="tap"
-              className="bg-white rounded-3xl border border-neutral-200 cursor-pointer"
+              className="bg-white rounded-3xl border border-neutral-200 cursor-pointer relative overflow-hidden"
             >
-              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-8">
+              <Image
+                src="/images/bento/card-bg.jpg"
+                alt="Card background"
+                fill
+                className="object-cover"
+              />
+              <div className="relative z-10 flex flex-col sm:flex-row items-start">
                 <Image
                   src="/images/bento/optometrist.png"
                   alt="Optometrist holding equipment"
@@ -147,13 +153,11 @@ export function BentoGrid() {
                   height={200}
                   className="w-full sm:w-auto rounded-t-3xl sm:rounded-l-3xl sm:rounded-tr-none"
                 />
-                <div className="p-4 sm:py-8 sm:px-2">
-                  <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2 text-[#000]">
-                    Expert Eyes
-                    <br />
-                    On You
+                <div className="p-4 sm:py-8 sm:px-8">
+                  <h3 className="text-2xl sm:text-7xl font-display font-semibold mb-2 text-white">
+                    Expert Eyes On You
                   </h3>
-                  <p className="text-neutral-600 text-sm sm:text-md max-w-[400px]">
+                  <p className="text-white text-sm sm:text-md max-w-[400px]">
                     Our trained optometrists follow an 18-step precision
                     verification process - so your prescription is spot-on, your
                     vision crystal clear, and your confidence sky-high.
@@ -245,14 +249,20 @@ export function BentoGrid() {
             whileInView="animate"
             whileHover="hover"
             whileTap="tap"
-            className="bg-white rounded-3xl border border-neutral-200 h-auto"
+            className="bg-white rounded-3xl border border-neutral-200 h-auto relative overflow-hidden"
           >
-            <div className="flex flex-col lg:flex-row items-start gap-4 sm:gap-8">
+            <Image
+              src="/images/bento/card-bg.jpg"
+              alt="Card background"
+              fill
+              className="object-cover"
+            />
+            <div className="relative z-10 flex flex-col lg:flex-row items-center">
               <div className="p-4 sm:p-8">
-                <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2 text-[#000]">
+                <h3 className="text-2xl sm:text-7xl font-display font-semibold mb-2 text-white">
                   Frame Selection
                 </h3>
-                <p className="text-neutral-600 text-sm sm:text-md">
+                <p className="text-white text-sm sm:text-md">
                   Browse our extensive collection of frames from top brands and
                   independent designers.
                 </p>
@@ -284,7 +294,7 @@ export function BentoGrid() {
                 height={300}
                 className="rounded-t-3xl w-full h-[200px] sm:h-[300px] object-cover"
               />
-              <div className="flex flex-col px-4 pb-6 sm:pb-10">
+              <div className="flex flex-col px-8 pb-6 sm:pb-10">
                 <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2 flex items-center gap-2 text-[#000]">
                   Eye Care Anywhere
                   <Image

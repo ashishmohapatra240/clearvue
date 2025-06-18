@@ -33,7 +33,7 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-4 sm:mb-2 text-white tracking-tight font-display"
+                className="text-4xl sm:text-5xl font-semibold mb-4 sm:mb-2 text-white tracking-tight font-display"
               >
                 Find Your Frame Game
               </motion.h1>

@@ -106,7 +106,7 @@ export function TestimonialsSection() {
               key={i}
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="relative flex h-[280px] sm:h-[300px] lg:h-[320px] flex-col rounded-2xl sm:rounded-3xl bg-white p-4 sm:p-6 lg:p-8 shadow-md ring-1 ring-slate-100 mx-2 sm:mx-3 lg:mx-4 w-[280px] sm:w-[320px] lg:w-[380px] xl:w-[400px] my-2 sm:my-3 lg:my-4"
+              className="relative flex h-[280px] sm:h-[300px] lg:h-[320px] flex-col rounded-2xl sm:rounded-3xl bg-neutral-50 p-4 sm:p-6 lg:p-8 shadow-md ring-1 ring-slate-100 mx-2 sm:mx-3 lg:mx-4 w-[280px] sm:w-[320px] lg:w-[380px] xl:w-[400px] my-2 sm:my-3 lg:my-4"
             >
               <div className="flex-1">
                 <p className="mt-2 sm:mt-3 lg:mt-4 text-sm sm:text-base lg:text-md leading-relaxed text-slate-700 font-sans">

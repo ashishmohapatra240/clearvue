@@ -27,7 +27,7 @@ const Vision = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 md:mb-8 text-black font-display"
+          className="text-4xl sm:text-5xl font-semibold text-neutral-900 font-display mb-4 sm:mb-6 md:mb-8"
         >
           Our Vision
         </motion.h2>
@@ -37,7 +37,7 @@ const Vision = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-black text-base sm:text-lg md:text-xl lg:text-2xl font-sans font-normal max-w-4xl mx-auto leading-relaxed px-2"
+          className="text-neutral-900 text-base sm:text-lg md:text-xl lg:text-2xl font-sans font-normal max-w-4xl mx-auto leading-relaxed px-2"
         >
           To lead the eyewear industry in India by offering fashionable,
           high-quality eyewear at honest prices, with trust built through expert
