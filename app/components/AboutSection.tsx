@@ -11,8 +11,6 @@ const STORE_IMAGES = [
   "/images/stores/high-street-apollo.jpg",
   "/images/stores/kishan-nagar.jpg",
   "/images/stores/nit-1.jpg",
-  "/images/stores/phagwara.jpg",
-  "/images/stores/qutub-plaza.jpg",
   "/images/stores/Rajpur.png",
   "/images/stores/sector-10-faridabad.jpg",
 ];
