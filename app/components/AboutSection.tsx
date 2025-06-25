@@ -5,26 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const STORE_IMAGES = [
-  "/images/stores/Ballupur.png",
   "/images/stores/bhatinda.jpg",
   "/images/stores/brs-nagar.jpg",
-  "/images/stores/civil-line-ludhiana.jpg",
-  "/images/stores/dharampur.jpg",
   "/images/stores/Dharampur.png",
-  "/images/stores/Gurgaon.png",
   "/images/stores/high-street-apollo.jpg",
-  "/images/stores/id-market.jpg",
-  "/images/stores/infocity.jpg",
-  "/images/stores/jalgaon.jpg",
   "/images/stores/kishan-nagar.jpg",
-  "/images/stores/moga.jpg",
-  "/images/stores/nehru-colony.jpg",
   "/images/stores/nit-1.jpg",
-  "/images/stores/nit-5.jpg",
-  "/images/stores/nizampura.jpg",
   "/images/stores/phagwara.jpg",
   "/images/stores/qutub-plaza.jpg",
-  "/images/stores/rajpur-road-dehradun.jpg",
   "/images/stores/Rajpur.png",
   "/images/stores/sector-10-faridabad.jpg",
 ];
