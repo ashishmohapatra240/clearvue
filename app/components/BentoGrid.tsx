@@ -119,11 +119,9 @@ export function BentoGrid() {
                 Style Meets Quality
               </h2>
               <p className="text-white text-sm sm:text-md">
-                Contemporary Fashion and Style for your wardrobe. Our team
-                researches on the design direction in upcoming eyewear trends
-                and brings them to you before any other brand does. As a result,
-                you get the latest shapes, colors, skin friendly materials,
-                designs and technology in eyewear.
+                Where trend meets precision—our frames are crafted for style,
+                comfort, and lasting quality. Because looking sharp should
+                feel effortless.
               </p>
             </motion.div>
           </motion.div>
@@ -205,35 +203,31 @@ export function BentoGrid() {
           variants={cardVariants}
           initial="initial"
           whileInView="animate"
-          whileHover="hover"
           whileTap="tap"
-          className="bg-white rounded-3xl border border-neutral-200"
+          className="bg-white rounded-3xl border border-neutral-200 relative overflow-hidden flex justify-center items-center"
         >
           <motion.div
-            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 p-6 sm:p-16 justify-center"
-            variants={textReveal}
+            variants={imageHover}
+            initial="rest"
+            className="relative"
           >
-            <div className="flex justify-center">
-              <Image
-                src="/images/bento/infinity.png"
-                alt="Infinity symbol"
-                width={80}
-                height={40}
-                className="text-blue-500 sm:w-[120px]"
-              />
-            </div>
-            <div>
-              <h3 className="text-3xl sm:text-5xl font-display font-semibold mb-2 sm:mb-4 text-center text-[#000]">
-                Your Glasses, Ready in{" "}
-                <span className="bg-gradient-to-r from-[#E52D93] to-[#00CFFF] bg-clip-text text-transparent">
-                  4 Hours
-                </span>
-              </h3>
-              <p className="text-neutral-600 text-xs sm:text-sm text-center max-w-[400px] mx-auto">
-                Forget the wait. Get your custom eyeglasses ready within just 4
-                hours - crafted & fitted, at record speed.
-              </p>
-            </div>
+            <Image
+              src="/images/bento/banner-1.jpg"
+              alt="Banner image"
+              width={844}
+              height={526}
+              className="block sm:hidden"
+              priority
+            />
+            <Image
+              src="/images/bento/banner-2.jpg"
+              alt="Banner image"
+              width={2560}
+              height={720}
+              className="hidden sm:block"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
           </motion.div>
         </motion.div>
 
@@ -272,7 +266,7 @@ export function BentoGrid() {
                 alt="Collection of eyewear frames"
                 width={300}
                 height={300}
-                className="w-full h-[300px] lg:h-[500px] rounded-b-3xl lg:rounded-l-none lg:rounded-r-3xl object-cover"
+                className="w-full h-[300px] lg:h-[460px] rounded-b-3xl lg:rounded-l-none lg:rounded-r-3xl object-cover"
               />
             </div>
           </motion.div>
