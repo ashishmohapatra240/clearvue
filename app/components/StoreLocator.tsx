@@ -76,7 +76,7 @@ const STORES = [
     status: "Active",
     shortAddress: "",
     featured: false,
-    image: "/images/stores/jalgaon.jpg",
+    image: "/images/stores/jalandhar.jpg",
   },
   {
     id: 6,

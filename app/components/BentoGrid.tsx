@@ -182,7 +182,7 @@ export function BentoGrid() {
                   </h3>
                   <p className="text-neutral-600 text-sm sm:text-md max-w-[400px]">
                     Expect only premium lenses from top international brands
-                    like Fuji, Hoya, and Critzal, which offer unmatched clarity,
+                    like Fuji, Hoya, and Crizal, which offer unmatched clarity,
                     durability, and comfort.
                   </p>
                 </div>
