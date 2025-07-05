@@ -160,21 +160,16 @@ export function Navbar() {
                     {item.name}
                   </motion.a>
                 ))}
-                <motion.a
-                  initial={{ opacity: 0, y: -5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.15,
-                    delay: NAVIGATION_ITEMS.length * 0.05,
-                    ease: "easeOut",
-                  }}
-                  href="#contact"
-                  onClick={(e) => handleScroll(e, "#contact")}
-                  className="block px-3 py-2 text-base font-medium text-neutral-900"
-                >
-                  Contact Us
-                </motion.a>
               </div>
+              <motion.a
+                whileHover={{ y: -4 }}
+                whileTap={{ y: 1 }}
+                transition={{ duration: 0.2 }}
+                href="/careers"
+                className="inline-flex items-center justify-center bg-pink-600 px-4 py-2 text-sm font-medium text-white transition-colors rounded-full w-full mb-8 font-sans hover:bg-pink-700"
+              >
+                Careers
+              </motion.a>
             </motion.div>
           )}
         </AnimatePresence>
