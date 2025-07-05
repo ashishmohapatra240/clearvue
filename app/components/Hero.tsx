@@ -22,6 +22,13 @@ export function Hero() {
       subtitle:
         "Trends move fast—your eyewear should too. ClearVue makes switching styles seamless. Stay ready for every mood, moment, and mirror.",
     },
+    {
+      background: "/images/background-3.png",
+      image: "/images/model-hero3.png",
+      heading: "Get 2 Eyeglasses and lenses @999/- only",
+      subtitle:
+        "Instant trends, timeless vibes. With our quick-pick collection, you’re always in style. Frame it, flaunt it, own it.",
+    },
   ];
 
   const handleScroll = (
@@ -46,7 +53,7 @@ export function Hero() {
       {slides.map((slide, idx) => (
         <SwiperSlide key={idx}>
           <section
-            className="relative pt-16 sm:pt-20 bg-cover bg-center overflow-hidden"
+            className="relative pt-16 sm:pt-20 lg:h-[78vh] bg-cover bg-center overflow-hidden"
             style={{ backgroundImage: `url('${slide.background}')` }}
           >
             <div className="relative max-w-[1400px] mx-auto">
@@ -62,7 +69,9 @@ export function Hero() {
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.2 }}
-                      className="text-4xl sm:text-5xl font-semibold mb-4 sm:mb-2 text-white tracking-tight font-display whitespace-pre-line"
+                      className={`text-4xl sm:text-5xl font-semibold mb-4 sm:mb-2 tracking-tight font-display whitespace-pre-line ${
+                        idx === 2 ? 'text-black' : 'text-white'
+                      }`}
                     >
                       {slide.heading}
                     </motion.h1>
@@ -70,7 +79,9 @@ export function Hero() {
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.4 }}
-                      className="text-sm sm:text-base md:text-lg text-white mb-8 sm:mb-12 leading-relaxed max-w-lg font-sans"
+                      className={`text-sm sm:text-base md:text-lg mb-8 sm:mb-12 leading-relaxed max-w-lg font-sans ${
+                        idx === 2 ? 'text-black' : 'text-white'
+                      }`}
                     >
                       {slide.subtitle}
                     </motion.p>
