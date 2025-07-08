@@ -10,6 +10,7 @@ const NAVIGATION_ITEMS = [
   { name: "Solutions", href: "#solutions" },
   { name: "Mission", href: "#mission" },
   { name: "Store Locator", href: "#store-locator" },
+  { name: "Franchise", href: "/franchise" },
   { name: "Contact", href: "#contact" },
 ] as const;
 
