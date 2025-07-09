@@ -10,7 +10,6 @@ const NAVIGATION_ITEMS = [
   { name: "Solutions", href: "#solutions" },
   { name: "Mission", href: "#mission" },
   { name: "Store Locator", href: "#store-locator" },
-  { name: "Franchise", href: "/franchise" },
   { name: "Contact", href: "#contact" },
 ] as const;
 
@@ -85,9 +84,18 @@ export function Navbar() {
                 whileTap={{ y: 1 }}
                 transition={{ duration: 0.2 }}
                 href="/careers"
-                className="inline-flex items-center justify-center bg-pink-600 px-4 py-2 text-sm font-medium text-white transition-colors rounded-full font-sans hover:bg-pink-700"
+                className="inline-flex items-center justify-center border border-pink-600 px-4 py-2 text-sm font-medium text-pink-600 transition-colors rounded-full font-sans hover:bg-pink-50"
               >
                 Careers
+              </motion.a>
+              <motion.a
+                whileHover={{ y: -4 }}
+                whileTap={{ y: 1 }}
+                transition={{ duration: 0.2 }}
+                href="/franchise"
+                className="inline-flex items-center justify-center bg-pink-600 px-4 py-2 text-sm font-medium text-white transition-colors rounded-full font-sans hover:bg-pink-700"
+              >
+                Franchise
               </motion.a>
             </div>
           </div>
@@ -162,6 +170,15 @@ export function Navbar() {
                   </motion.a>
                 ))}
               </div>
+              <motion.a
+                whileHover={{ y: -4 }}
+                whileTap={{ y: 1 }}
+                transition={{ duration: 0.2 }}
+                href="/franchise"
+                className="inline-flex items-center justify-center border border-pink-600 px-4 py-2 text-sm font-medium text-pink-600 transition-colors rounded-full w-full mb-4 font-sans hover:bg-pink-600 hover:text-white"
+              >
+                Franchise
+              </motion.a>
               <motion.a
                 whileHover={{ y: -4 }}
                 whileTap={{ y: 1 }}

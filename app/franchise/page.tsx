@@ -106,11 +106,11 @@ export default function FranchisePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-display text-4xl sm:text-5xl mb-6 text-neutral-900 tracking-tight">
+            <h1 className="font-display text-4xl sm:text-5xl mb-6 text-neutral-900 tracking-tight text-center">
               Franchise With ClearVue
             </h1>
 
-            <p className="text-base text-neutral-700 mb-0 font-sans leading-relaxed">
+            <p className="text-base text-neutral-700 mb-0 font-sans leading-relaxed text-center">
               ClearVue isn&apos;t just a brand—it&apos;s a bold vision
               (literally).
               <br className="hidden sm:block" />
@@ -120,8 +120,10 @@ export default function FranchisePage() {
               <br className="hidden sm:block" />
               And now, we&apos;re looking for partners who share our style and
               ambition to take ClearVue to even more corners of India. If
-              you&apos;ve got the passion, space, and swagger—let&apos;s build
-              something iconic, together.
+              you&apos;ve got the passion, space, and swagger.
+            </p>
+            <p className="text-base text-neutral-700 mb-0 font-sans leading-relaxed text-center">
+              Let&apos;s build something iconic, together.
             </p>
           </motion.div>
         </div>
@@ -160,7 +162,7 @@ export default function FranchisePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 whileHover={{ scale: 1.02 }}
-                className="p-6 border rounded-xl transition-all duration-300 cursor-pointer bg-white border-neutral-200 hover:border-pink-300 hover:shadow-sm flex flex-col items-center text-center"
+                className="p-6 border rounded-xl transition-all duration-300 cursor-pointer bg-white border-pink-200 hover:border-pink-300 hover:shadow-sm flex flex-col items-center text-center"
               >
                 <div className="p-2 bg-pink-100 rounded-lg mb-2">
                   {card.icon}
@@ -179,7 +181,7 @@ export default function FranchisePage() {
 
       {/* Call to Action Section */}
       <motion.div
-        className="max-w-2xl mx-auto text-center mb-12"
+        className=" mx-auto text-center mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -195,7 +197,7 @@ export default function FranchisePage() {
       </motion.div>
 
       {/* Franchise Request Form Section */}
-      <div className="py-24 bg-neutral-50">
+      <div className="py-24 bg-pink-50/50">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
@@ -214,7 +216,7 @@ export default function FranchisePage() {
           </motion.div>
 
           <motion.form
-            className="space-y-6 bg-white p-8 rounded-xl shadow-sm"
+            className="space-y-6 bg-white p-8 rounded-xl shadow-lg border border-pink-200"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
