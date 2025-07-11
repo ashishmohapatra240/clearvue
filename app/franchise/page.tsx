@@ -107,7 +107,7 @@ export default function FranchisePage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="font-display text-4xl sm:text-5xl mb-6 text-neutral-900 tracking-tight text-center">
-              Franchise With ClearVue
+              Partner With ClearVue
             </h1>
 
             <p className="text-base text-neutral-700 mb-0 font-sans leading-relaxed text-center">
@@ -191,8 +191,12 @@ export default function FranchisePage() {
           Think Fashion. Think Franchise. Think ClearVue.
         </h2>
         <p className="text-neutral-600 font-sans">
-          If you believe style should be seen AND sold—fill in the form below
+          If you believe style should be seen and sold—fill in the form below
           and let&apos;s talk growth, glam, and glasses.
+        </p>
+        <p className="text-neutral-600 font-sans">
+          Want to connect with us over call? Reach out to us at:{" "}
+          <span className="font-bold">+91 83839 54955</span>
         </p>
       </motion.div>
 

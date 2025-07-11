@@ -95,7 +95,7 @@ export function Navbar() {
                 href="/franchise"
                 className="inline-flex items-center justify-center bg-pink-600 px-4 py-2 text-sm font-medium text-white transition-colors rounded-full font-sans hover:bg-pink-700"
               >
-                Franchise
+                Partner with us
               </motion.a>
             </div>
           </div>

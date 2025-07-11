@@ -519,11 +519,11 @@ export default function CareerPage() {
             Don&apos;t see the right position?
           </h2>
           <p className="text-neutral-600 mb-8 font-sans">
-            Send us your resume and we&apos;ll keep you in mind for future
-            opportunities.
+            Send us your resume or reach out to us at +91 79826 48330 and we&apos;ll
+            keep you in mind for future opportunities.
           </p>
           <a
-            href="mailto:careers@clearvue.co.in"
+            href="tel:+917982648330"
             className="inline-flex items-center px-6 py-3 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition-colors font-sans"
           >
             Contact Our HR Team
