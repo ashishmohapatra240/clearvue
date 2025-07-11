@@ -519,8 +519,9 @@ export default function CareerPage() {
             Don&apos;t see the right position?
           </h2>
           <p className="text-neutral-600 mb-8 font-sans">
-            Send us your resume or reach out to us at +91 79826 48330 and we&apos;ll
-            keep you in mind for future opportunities.
+            Send us your resume or reach out to us at{" "}
+            <span className="font-bold">+91 79826 48330</span> and we&apos;ll keep
+            you in mind for future opportunities.
           </p>
           <a
             href="tel:+917982648330"
