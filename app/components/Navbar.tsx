@@ -55,7 +55,7 @@ export function Navbar() {
                   alt="logo"
                   width={200}
                   height={200}
-                  className="w-36 lg:w-40 xl:w-48 object-cover"
+                  className="w-36 lg:w-40 xl:w-48 object-cover p-2"
                 />
               </Link>
             </motion.div>
@@ -174,19 +174,19 @@ export function Navbar() {
                 whileHover={{ y: -4 }}
                 whileTap={{ y: 1 }}
                 transition={{ duration: 0.2 }}
-                href="/franchise"
+                href="/careers"
                 className="inline-flex items-center justify-center border border-pink-600 px-4 py-2 text-sm font-medium text-pink-600 transition-colors rounded-full w-full mb-4 font-sans hover:bg-pink-600 hover:text-white"
               >
-                Franchise
+                Careers
               </motion.a>
               <motion.a
                 whileHover={{ y: -4 }}
                 whileTap={{ y: 1 }}
                 transition={{ duration: 0.2 }}
-                href="/careers"
+                href="/franchise"
                 className="inline-flex items-center justify-center bg-pink-600 px-4 py-2 text-sm font-medium text-white transition-colors rounded-full w-full mb-8 font-sans hover:bg-pink-700"
               >
-                Careers
+                Partner with us
               </motion.a>
             </motion.div>
           )}

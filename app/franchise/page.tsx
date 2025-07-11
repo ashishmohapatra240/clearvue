@@ -101,7 +101,7 @@ export default function FranchisePage() {
       <div className="relative pt-36 pb-16 bg-gradient-to-b from-neutral-50 to-white">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
           <motion.div
-            className="mx-auto"
+            className="mx-auto px-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -111,7 +111,7 @@ export default function FranchisePage() {
             </h1>
 
             <p className="text-base text-neutral-700 mb-0 font-sans leading-relaxed text-center">
-              ClearVue isn&apos;t just a brand—it&apos;s a bold vision
+              ClearVue isn&apos;t just a brand, it&apos;s a bold vision
               (literally).
               <br className="hidden sm:block" />
               We&apos;re changing how India wears, shops, and talks about
@@ -119,8 +119,7 @@ export default function FranchisePage() {
               are winning hearts and wardrobes across the country.
               <br className="hidden sm:block" />
               And now, we&apos;re looking for partners who share our style and
-              ambition to take ClearVue to even more corners of India. If
-              you&apos;ve got the passion, space, and swagger.
+              ambition to take ClearVue to even more corners of India.
             </p>
             <p className="text-base text-neutral-700 mb-0 font-sans leading-relaxed text-center">
               Let&apos;s build something iconic, together.
@@ -181,7 +180,7 @@ export default function FranchisePage() {
 
       {/* Call to Action Section */}
       <motion.div
-        className=" mx-auto text-center mb-12"
+        className=" mx-auto text-center mb-12 px-6"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

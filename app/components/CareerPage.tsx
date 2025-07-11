@@ -205,7 +205,7 @@ export default function CareerPage() {
       </div>
 
       {/* Application Form Section */}
-      <div id="application-form" className="py-24 bg-neutral-50">
+      <div id="application-form" className="py-24 bg-pink-50/50">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
@@ -224,7 +224,7 @@ export default function CareerPage() {
           </motion.div>
 
           <motion.form
-            className="space-y-6 bg-white p-8 rounded-xl shadow-sm"
+            className="space-y-6 bg-white p-8 rounded-xl shadow-lg border border-pink-200"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
