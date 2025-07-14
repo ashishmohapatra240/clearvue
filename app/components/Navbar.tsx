@@ -51,11 +51,11 @@ export function Navbar() {
             >
               <Link href="/" className="flex items-center gap-2">
                 <Image
-                  src="/images/logo-black.png"
+                  src="/images/logo.png"
                   alt="logo"
-                  width={200}
-                  height={200}
-                  className="w-36 lg:w-40 xl:w-48 object-cover p-2"
+                  width={250}
+                  height={250}
+                  className="w-36 lg:w-48 object-fit"
                 />
               </Link>
             </motion.div>

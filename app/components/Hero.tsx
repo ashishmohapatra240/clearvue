@@ -110,11 +110,12 @@ export function Hero() {
                     alt="Person wearing glasses"
                     width={1100}
                     height={900}
-                    className="absolute bottom-0 max-w-none object-contain pointer-events-none
-                       left-[20%] sm:left-auto
+                    className={`absolute bottom-0 max-w-none pointer-events-none
+                      left-[20%] sm:left-auto
                       -translate-x-1/2 sm:translate-x-0
                       right-auto sm:right-[-10%] lg:right-[-40%]
-                      w-[250%] sm:w-[160%] lg:w-[220%]"
+                      w-[215%] sm:w-[160%] lg:w-[220%]
+                      ${idx === 0 ? 'object-cover h-full' : 'object-contain'}`}
                     priority
                   />
                 </motion.div>
