@@ -176,14 +176,10 @@ export function BentoGrid() {
               <div className="flex flex-col-reverse sm:flex-row items-start gap-4 sm:gap-8">
                 <div className="p-4 sm:p-8">
                   <h3 className="text-2xl sm:text-4xl font-display font-semibold mb-2 text-[#000]">
-                    We don&apos;t
-                    <br />
-                    do average.
+                    India’s Finest Lenses
                   </h3>
                   <p className="text-neutral-600 text-sm sm:text-md max-w-[400px]">
-                    Expect only premium lenses from top international brands
-                    like Fuji, Hoya, and Crizal, which offer unmatched clarity,
-                    durability, and comfort.
+                  Engineered with Corning and Fuji innovation, ClearVue lenses offer India’s sharpest clarity, lightweight comfort, and flawless visual experience.
                   </p>
                 </div>
                 <Image
